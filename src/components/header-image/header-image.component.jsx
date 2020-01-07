@@ -47,7 +47,6 @@ const Overlay = styled.div`
 `
 
 const HeaderImage = ({imageDeets}) => {
-    console.log(imageDeets)
     return (
         <StyledHeaderImage>
            <Thumbnail style={{backgroundImage:`url(${urlFor(imageDeets.thumbnail).url()})`}}/> 

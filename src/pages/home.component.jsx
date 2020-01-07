@@ -4,12 +4,17 @@ import sanityClient from '../Client'
 import styled from 'styled-components'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
+import ClientContainer from '../components/client-logo-container/client-logo-container.component'
+import ArticleContainer from '../components/article-container/article-container.component'
 
 const HomeCarousel = styled(Carousel)`
   overflow: hidden;
-  height: auto;
+  height: 100vh;
   padding: 0;
-  background: black;
+  width: 100%;
+  ul {
+    padding: 0;
+  }
 
   .slide iframe {
     margin: 0 !important;
@@ -21,10 +26,9 @@ const HomeCarousel = styled(Carousel)`
   }`
   const HomeContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   overflow: hidden;
-  background: black;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
   }`
@@ -67,7 +71,8 @@ const Home = () => {
                     }
                 </HomeCarousel>
            : null } 
-            
+            <ClientContainer/>
+            <ArticleContainer/>
         </HomeContainer>
     )
 }

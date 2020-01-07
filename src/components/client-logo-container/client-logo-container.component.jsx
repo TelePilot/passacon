@@ -1,12 +1,39 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import ClientLogo from '../client-logo/client-logo.component'
+import sanityClient from '../../Client'
+
+const StyledContainer = styled.div`
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+
+`
 
 const ClientContainer = () => {
-    return (
-        <div>
+    const [client, setClient] = useState('')
+    useEffect(() => {
+        const clientQuery = `*[_type == "uppdrag"]`
+        const clientArray = []
+        sanityClient.fetch(clientQuery).then(client => {
             
-        </div>
+          client.forEach(client => {
+              clientArray.push(client)
+          })
+          setClient(clientArray)
+        })
+        return
+      }, [])
+    return (
+        <StyledContainer>
+            {client ? 
+            client.map((client, id) => <ClientLogo key={id} client={client} />)
+            : null}
+            
+        </StyledContainer>
     )
 }
 
