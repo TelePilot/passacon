@@ -7,11 +7,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 background:${({ theme }) => theme.primaryLight};
-height: 100vh;
+height: auto;
 transform: ${({open}) => open ? 'translate(0)' : 'translate(-100%)'};
 text-align: left;
-padding: 2rem;
+padding:3rem 6rem;
 position: absolute;
+min-width: 300px;
+z-index: 99;
 top: 0;
 left: 0;
 transition: transform 0.3s ease-in-out;
@@ -22,9 +24,9 @@ transition: transform 0.3s ease-in-out;
 }
 
 a {
-  font-size: 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   font-weight: bold;
   letter-spacing: 0.5rem;
   color: black;
@@ -42,22 +44,13 @@ a {
 }
 `
 
-const Menu = ({ open }) => {
+const Menu = ({ open, header }) => {
+    
     return (
         <StyledMenu open={open}>
-            <a href="/">
-                <span role="img" aria-label="about us">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
-                About us
-            </a>
-            <a href="/">
-                <span role="img" aria-label="price">&#x1f4b8;</span>
-                Pricing
-                </a>
-            <a href="/">
-                <span role="img" aria-label="contact">&#x1f4e9;</span>
-                Contact
-                </a>
-            </StyledMenu>
+            <div style={{height: "3rem"}}></div>
+            {header ? header.meny.map(item => <a href="google.com" key={item._key}>{item.name}</a>): null}
+        </StyledMenu>
     )
 }
 

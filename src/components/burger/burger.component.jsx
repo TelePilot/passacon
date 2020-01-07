@@ -16,7 +16,7 @@ position: absolute;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 100;
   
   &:focus {
     outline: none;
@@ -25,7 +25,7 @@ position: absolute;
   div {
     width: 2.5rem;
     height: 0.25rem;
-    background: ${({ theme, open }) => open ? theme.secondaryLight : theme.primaryDark};
+    background: ${({ theme, open }) => open ? theme.secondaryLight : theme.primaryLight};
     border-radius: 50px;
     transition: all 0.3s ease-in-out;
     position: relative;
