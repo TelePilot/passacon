@@ -38,7 +38,7 @@ const Home = () => {
         titel: ''
     })
     useEffect(() => {
-        const homeQuery = `*[_type == "artikel" && huvudsida] {
+        const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
             thumbnail, titel
         }`
 
@@ -60,19 +60,18 @@ const Home = () => {
         showStatus: false,
         transitionTime: 1000,
       }
-      console.log(home)
     return (
         <HomeContainer>
             {
                 home.length > 0 ?
                 <HomeCarousel {...settings}>
                     {
-                        home.map((homeImage, id) => <HeaderImage key={id} imageDeets={homeImage}/>)
+                        home.map((homeImage, id) => <HeaderImage key={id} width={'100%'} height={'100vh'} imageDeets={homeImage}/>)
                     }
                 </HomeCarousel>
            : null } 
             <ClientContainer/>
-            <ArticleContainer/>
+            <ArticleContainer content="nyhet || tjanster" />
         </HomeContainer>
     )
 }

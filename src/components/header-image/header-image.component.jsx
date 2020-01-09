@@ -1,25 +1,27 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
+import { Link } from 'react-router-dom'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
 }
 
+const HeaderLink = styled(Link)`
+    text-decoration: none;`
+
 const StyledHeaderImage = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 100vh;
     position: relative;   
 `
 
 const Thumbnail = styled.div`
     width: 100%;
-    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -38,7 +40,6 @@ const Title = styled.h1`
 `
 const Overlay = styled.div`
     width: 100%;
-    height: 100vh;
     background: rgba(0,0,0,0.3);
     position: absolute;
     left: 0;
@@ -46,13 +47,16 @@ const Overlay = styled.div`
     z-index: 0;
 `
 
-const HeaderImage = ({imageDeets}) => {
+const HeaderImage = ({imageDeets, width, height}) => {
     return (
-        <StyledHeaderImage>
-           <Thumbnail style={{backgroundImage:`url(${urlFor(imageDeets.thumbnail).url()})`}}/> 
-           <Overlay />
+        <HeaderLink to={`/artikel/${imageDeets.titel}`}>
+        <StyledHeaderImage style={{height:height}}>
+           <Thumbnail style={{backgroundImage:`url(${urlFor(imageDeets.thumbnail).url()})`, height: height}}/> 
+           <Overlay style={{height: height}} />
            <Title>{imageDeets.titel}</Title>
         </StyledHeaderImage>
+        </HeaderLink>
+        
     )
 }
 

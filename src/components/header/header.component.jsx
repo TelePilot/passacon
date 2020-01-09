@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react'
-import styled from 'styled-components'
 import Burger from '../burger/burger.component'
 import Menu from '../menu/menu.component'
 import { useOnClickOutside } from '../../hooks'
@@ -23,6 +22,7 @@ const Header = () => {
               setHeader(header)
           })
         })
+
         return
       }, [])
 
@@ -30,7 +30,7 @@ const Header = () => {
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Menu header={header} open={open} setOpen={setOpen} />
-          <Logo logo={header.logga} />
+          <Logo logo={header.logga} setOpen={setOpen} />
         </div>
     )
 }

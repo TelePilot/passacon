@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
+import { Link } from 'react-router-dom'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -17,9 +18,12 @@ const StyledLogo = styled.img`
     z-index: 100;
 `
 
-const Logo = ({logo}) => {
+const Logo = ({logo, setOpen}) => {
     return (
-        <StyledLogo src={urlFor(logo).url()}/>
+        <Link onClick={() => setOpen(false)} to="/">
+             <StyledLogo src={urlFor(logo).url()}/>
+        </Link>
+       
     )
 }
 

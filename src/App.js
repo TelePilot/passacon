@@ -1,17 +1,39 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
+import { Route, Switch} from 'react-router-dom'
 import './App.css'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme.styles'
 import Header from './components/header/header.component'
-import Home from './pages/home.component'
+
+const HomePage = lazy(() => import('./pages/home.component'))
+const TjansterPage = lazy(() => import('./pages/tjanster.component'))
+const ArticlePage = lazy(() => import('./pages/article.component'))
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    
        <div className="App">
+         <ThemeProvider theme={theme}>
           <Header/>
-          <Home/>
+          <Switch>
+            <Suspense fallback={<p>Loading</p>}>
+            <Route
+            path={'/'}
+            component={HomePage}
+            exact
+            />
+            <Route
+            path={'/tjanster'} 
+            component={TjansterPage}/>
+            <Route 
+            path={'/artikel/:artikelId'} 
+            component={ArticlePage} />
+            </Suspense>
+          </Switch>
+ 
+          </ThemeProvider>
         </div>
-    </ThemeProvider>
+  
     
   )
 }

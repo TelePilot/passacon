@@ -12,11 +12,12 @@ const StyledContainer = styled.div`
     grid-gap: 2%;
 `
 
-const ArticleContainer = () => {
+const ArticleContainer = ({content}) => {
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
-        const articleQuery = `*[_type == "artikel" && nyhet] {
+        const articleQuery = `*[_type == "artikel" && ${content}] | order(datum desc)
+        {
             thumbnail, titel
         }`
         const articleArray = []
@@ -29,7 +30,7 @@ const ArticleContainer = () => {
           setArticles(articleArray)
         })
         return
-      }, [])
+      }, [content])
     return (
         <StyledContainer>
             {articles ? articles.map((article, id) => <ArticleThumbnail key={id} article={article} /> ) : null}

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
+import { Link } from 'react-router-dom'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -13,14 +14,18 @@ const Thumbnail = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
 `
-const Link = styled.a`
+const ArticleLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+`
+
+const ArticleText = styled.p`
     font-size: 18px;
     color: black;
     text-decoration: none;
     text-align: left;
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 `
 const Arrow = styled.img`
@@ -28,19 +33,23 @@ const Arrow = styled.img`
     height: auto;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    margin-top: 2px;
+    margin-bottom: -2.8px;
     margin-left: 5px;
+`
+const LinkContainer = styled.div`
+    width: 100%;
+
 `
 
 const ArticleThumbnail = ({article}) => {
     return (
-        <div>
+        <ArticleLink to={`/artikel/${article.titel}`}>
              <Thumbnail style={{backgroundImage: `url(${urlFor(article.thumbnail).url()})`}}/>
-             <Link href="#">{article.titel}
-             <Arrow alt="arrow" src="left-arrow.svg" />
-             </Link>
-            
-        </div>
+             <LinkContainer>
+             <ArticleText ><span>{article.titel}<Arrow alt="arrow" src="left-arrow.svg" /></span>
+             </ArticleText>
+             </LinkContainer>
+        </ArticleLink>
     )
 }
 

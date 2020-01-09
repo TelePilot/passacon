@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { bool } from 'prop-types'
 
 const StyledMenu = styled.nav`
@@ -23,7 +24,10 @@ transition: transform 0.3s ease-in-out;
   padding: 0;
 }
 
-a {
+}
+`
+const NavLink = styled(Link)`
+
   font-size: 1rem;
   text-transform: uppercase;
   padding: 0.5rem 0;
@@ -31,7 +35,7 @@ a {
   letter-spacing: 0.5rem;
   color: black;
   text-decoration: none;
-  transition: color 0.3s linear;
+  transition: color 0.1s linear;
   
   @media screen and (max-width: ${({theme }) => theme.mobile}) {
     font-size: 1.5rem;
@@ -39,17 +43,16 @@ a {
   }
 
   &:hover {
-    color: blue;
+    color: ${({ theme }) => theme.primaryHover};
   }
-}
 `
 
-const Menu = ({ open, header }) => {
-    
+const Menu = ({ open, header, setOpen }) => {
+ 
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>
-            {header ? header.meny.map(item => <a href="google.com" key={item._key}>{item.name}</a>): null}
+            {header ? header.meny.map(item => <NavLink onClick={() => setOpen(!open)} to={item.link} key={item._key}>{item.name}</NavLink>): null}
         </StyledMenu>
     )
 }
