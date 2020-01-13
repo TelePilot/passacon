@@ -66,7 +66,7 @@ const Home = () => {
                 home.length > 0 ?
                 <HomeCarousel {...settings}>
                     {
-                        home.map((homeImage, id) => <HeaderImage key={id} width={'100%'} height={'100vh'} imageDeets={homeImage}/>)
+                        home.map((homeImage, id) => <HeaderImage key={id} imageDeets={homeImage}/>)
                     }
                 </HomeCarousel>
            : null } 

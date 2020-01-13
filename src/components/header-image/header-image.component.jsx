@@ -17,11 +17,13 @@ const StyledHeaderImage = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: 100vh;
     position: relative;   
 `
 
 const Thumbnail = styled.div`
     width: 100%;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -40,6 +42,7 @@ const Title = styled.h1`
 `
 const Overlay = styled.div`
     width: 100%;
+    height: 100vh;
     background: rgba(0,0,0,0.3);
     position: absolute;
     left: 0;
@@ -47,12 +50,12 @@ const Overlay = styled.div`
     z-index: 0;
 `
 
-const HeaderImage = ({imageDeets, width, height}) => {
+const HeaderImage = ({imageDeets}) => {
     return (
         <HeaderLink to={`/artikel/${imageDeets.titel}`}>
-        <StyledHeaderImage style={{height:height}}>
-           <Thumbnail style={{backgroundImage:`url(${urlFor(imageDeets.thumbnail).url()})`, height: height}}/> 
-           <Overlay style={{height: height}} />
+        <StyledHeaderImage>
+           <Thumbnail style={{backgroundImage:`url(${urlFor(imageDeets.thumbnail).url()})`}}/> 
+           <Overlay />
            <Title>{imageDeets.titel}</Title>
         </StyledHeaderImage>
         </HeaderLink>

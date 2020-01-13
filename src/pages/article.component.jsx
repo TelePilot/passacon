@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom' 
 import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
-import HeaderImage from '../components/header-image/header-image.component'
+import ArticleThumbnail from '../components/article-header-thumbnail/article-header-thumbnail.component'
 
 const ArticleCont = styled.div`
     height: auto;
@@ -13,6 +13,7 @@ const ArticleCont = styled.div`
     align-items: center;
     flex-flow:wrap column;
     margin-top: 100px;
+    margin-bottom: 100px;
 `
 const TextCont = styled.div`
     width: 70%;
@@ -35,7 +36,7 @@ const Article = () => {
 
     return (
         <ArticleCont>
-            <HeaderImage width={'80%'} height={'60vh'} imageDeets={article}/>
+            <ArticleThumbnail imageDeets={article}/>
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
