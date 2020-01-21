@@ -5,14 +5,11 @@ import RollHeader from '../components/roll-header/roll-header.component'
 import RollContainer from '../components/roll-container/roll-container.component'
 
 const Cont = styled.div`
-    margin: 100px 0;
+    margin: 120px 0;
     text-align: left;
 
 `
-const Title = styled.h1`
-    font-size: 64px
-    margin-left: 5%;
-`
+
 
 const Roller = () => {
     const [roller, setRoller] = useState({
@@ -31,7 +28,7 @@ const Roller = () => {
       console.log(roller)
     return (
         <Cont>
-            <Title>Våra roller</Title>
+         
             <RollHeader headerImg={roller.thumbnail} headerTitle={roller.titel} headerDesc={roller.beskrivning} />
             <RollContainer roller={roller.roller}/>   
         </Cont>

@@ -9,6 +9,7 @@ const HomePage = lazy(() => import('./pages/home.component'))
 const TjansterPage = lazy(() => import('./pages/tjanster.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const RollerPage = lazy(() => import('./pages/roller.component'))
+const KonsultPage = lazy(() => import('./pages/konsulter.component'))
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             component={HomePage}
             exact
             />
-            <Route
+            <Route exact
             path={'/tjanster'} 
             component={TjansterPage}/>
             <Route 
@@ -32,6 +33,9 @@ function App() {
             <Route 
             path={'/roller'}
             component={RollerPage} />
+             <Route 
+            path={'/konsulter'}
+            component={KonsultPage} />
             </Suspense>
           </Switch>
  

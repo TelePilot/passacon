@@ -16,17 +16,17 @@ const HeaderCont = styled.div`
     justify-content: flex-start;
     align-items:flex-start;
     flex-flow: column;
-    height: 70vh;
+    height: 50vh;
     width: 85%;
     margin-left: 7.5%;
     box-sizing: border-box;
-    padding: 5% 25% 0 5%;
+    padding: 2% 25% 0 5%;
     color: white;
 `
 
 const Thumbnail = styled.div`
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -34,10 +34,17 @@ const Thumbnail = styled.div`
     top: 0;
     z-index: -2;
 `
+const Header = styled.h1`
+    font-size: 64px
+    margin: 0 0 5% 0;
+
+    
+`
 
 const Title = styled.h2`
     color: white;
     font-size: 48px;
+    margin: 0;
 `
 
 const Desc = styled(PortableText)`
@@ -48,7 +55,7 @@ const Desc = styled(PortableText)`
 
 const Overlay = styled.div`
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     background: rgba(0,0,255,0.1);
     position: absolute;
     top: 0;
@@ -61,6 +68,7 @@ const RollHeader = ({ headerImg, headerTitle, headerDesc }) => {
         <HeaderCont>
           <Thumbnail style={{backgroundImage:`url(${urlFor(headerImg).url()})`}}/> 
           <Overlay />
+          <Header>Våra Roller</Header>
           <Title>{headerTitle}</Title>
           <Desc blocks={headerDesc}/>
         </HeaderCont>

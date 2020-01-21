@@ -9,15 +9,19 @@ const ArticleCont = styled.div`
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    flex-flow:wrap column;
-    margin-top: 100px;
+    flex-flow: wrap column;
+    margin-top: 120px;
     margin-bottom: 100px;
+    box-sizing: border-box;
+    padding: 0 5%;
 `
 const TextCont = styled.div`
-    width: 70%;
+    width: 100%;
     text-align: left;
+    box-sizing: border-box;
+    padding: 0 12%;
 `
 const Text = styled(PortableText)``
 

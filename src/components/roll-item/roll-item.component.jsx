@@ -19,6 +19,9 @@ const Cont = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: column wrap;
+    // &:nth-child(n+5) {
+    //     grid-column: span 2;
+    // }
 `
 const Title = styled.h3`
     font-size: 26px;

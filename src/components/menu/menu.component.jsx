@@ -52,7 +52,7 @@ const Menu = ({ open, header, setOpen }) => {
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>
-            {header ? header.meny.map(item => <NavLink onClick={() => setOpen(!open)} to={item.link} key={item._key}>{item.name}</NavLink>): null}
+            {header ? header.meny.map(item => <NavLink onClick={() => setOpen(!open)} to={`/${item.link}`} key={item._key}>{item.name}</NavLink>): null}
         </StyledMenu>
     )
 }

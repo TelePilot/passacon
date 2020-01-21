@@ -10,24 +10,29 @@ function urlFor(source) {
 }
 const Cont = styled.div`
     width: 80%;
-    height: auto;
+    min-height: 40vh;
+    height: auto
     text-align: left;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 `
 const Title = styled.h1`
-    font-size: 64px;
-    margin: 0 0 10px 0;
+    font-size: 52px;
+    margin-left: 5%;
+    color: white;
+    width: 50%;
 `
 
-const Image = styled.img`
-    width: 100%;
-    height: auto
-`
 
 const ArticleThumbnail = ({ imageDeets }) => {
     return (
-        <Cont>
+        <Cont style={{backgroundImage: `url(${urlFor(imageDeets.thumbnail).url()})`}}>
             <Title>{imageDeets.titel}</Title>
-            <Image src={urlFor(imageDeets.thumbnail).url()}/> 
+          
         </Cont>
     )
 }
