@@ -26,7 +26,7 @@ const Konsulter = () => {
     return (
         <div>
             <KonsultContainer setSlide={setSlide} click={setShowing} showing={showing} konsulter={konsult} />
-            <KonsultSlider slide={slide} click={setShowing} showing={showing} konsulter={konsult} />
+            <KonsultSlider setSlide={setSlide} slide={slide} click={setShowing} showing={showing} konsulter={konsult} />
         </div>
     )
 }
