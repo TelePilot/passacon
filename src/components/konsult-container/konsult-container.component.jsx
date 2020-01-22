@@ -14,10 +14,10 @@ const KonsultCont = styled.div`
 
 `
 
-const KonsultContainer = ({konsulter, showing, click}) => {
+const KonsultContainer = ({konsulter, showing, click, setSlide}) => {
     return (
         <KonsultCont>
-            {konsulter.map((konsult, id) => <KonsultItem showing={showing} clicked={click} konsult={konsult} key={id} />)}
+            {konsulter.map((konsult, index) => <KonsultItem showing={showing} setSlide={setSlide} clicked={click} konsult={konsult} slide={index} key={index} />)}
         </KonsultCont>
     )
 }

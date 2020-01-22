@@ -49,12 +49,14 @@ const Deets = styled.a`
     text-decoration: none;
     color: black;
 `
-const KonsultItem = ({konsult, clicked}) => {
+const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
     return (
-        <ContCont onClick={() => clicked({
+        <ContCont onClick={() => {clicked({
             pointerEvents: 'auto',
             opacity: 1
-        })}>
+        })
+       setSlide(slide)
+        }}>
             <ItemCont style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}>
                 <BoxCont>
                     <Text>{konsult.namn}</Text>

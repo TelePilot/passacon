@@ -14,10 +14,9 @@ const SliderCont = styled.div`
     cursor: auto;
     opacity: 0;
     transition: opacity  0.1s ease-in-out;
+
 `
-const SliderSlider = styled(Slider)`
-    height: 70vh;
-`
+
 
   const SliderBackground = styled.div`
   width: 100%;
@@ -31,16 +30,16 @@ const SliderSlider = styled(Slider)`
   opacity: 0;
   transition: opacity  0.1s ease-in-out;
 `
-
-const KonsultSlider = ({konsulter, showing,click}) => {
+const KonsultSlider = ({konsulter, showing, click, slide}) => {
     
-    console.log(showing)
+   
     var settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        slickGoTo: 2
     }
 
     return (
@@ -50,10 +49,11 @@ const KonsultSlider = ({konsulter, showing,click}) => {
             opacity: 0
         })} style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
         </SliderBackground>
-        <SliderCont style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
-                <SliderSlider {...settings} >
+  
+        <SliderCont onClick={() => console.log(this)}  style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
+                <Slider {...settings} >
                     {konsulter.map((konsult, id) => <SliderItem key={id} konsult={konsult} />)}
-                </SliderSlider>
+                </Slider>
             </SliderCont>
         </div>
         
