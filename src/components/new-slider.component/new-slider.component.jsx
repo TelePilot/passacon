@@ -2,7 +2,7 @@ import React from 'react'
 import { CarouselProvider, Slider, ButtonBack, Slide, ButtonNext } from 'pure-react-carousel'
 import styled from 'styled-components'
 import SliderItem from '../konsult-slider-item/konsult-slider-item.component'
-import 'pure-react-carousel/dist/react-carousel.es.css'
+
 const SliderBackground = styled.div`
 width: 100%;
 height: 100vh;

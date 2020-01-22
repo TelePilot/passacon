@@ -10,6 +10,7 @@ const TjansterPage = lazy(() => import('./pages/tjanster.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const RollerPage = lazy(() => import('./pages/roller.component'))
 const KonsultPage = lazy(() => import('./pages/konsulter.component'))
+const OmOssPage = lazy(() => import('./pages/OmOss.component'))
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
              <Route 
             path={'/konsulter'}
             component={KonsultPage} />
+             <Route 
+            path={'/om-oss'}
+            component={OmOssPage} />
             </Suspense>
           </Switch>
  
