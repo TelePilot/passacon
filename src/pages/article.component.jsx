@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 import ArticleThumbnail from '../components/article-header-thumbnail/article-header-thumbnail.component'
+import Mer from '../components/mer/mer.component'
 
 const ArticleCont = styled.div`
     height: auto;
@@ -44,6 +45,7 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
+            <Mer topic={article.titel} />
         </ArticleCont>
     )
 }

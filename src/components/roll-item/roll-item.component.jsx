@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import PortableText from '@sanity/block-content-to-react'
 import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
+import VetaMer from '../veta-mer/veta-mer.component'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -52,6 +53,7 @@ const RollItem = ({roll}) => {
               
             </TitleCont>
             <Desc blocks={roll.beskrivning} />
+            <VetaMer />
         </Cont>
     )
 }

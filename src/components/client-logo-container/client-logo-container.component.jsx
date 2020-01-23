@@ -50,8 +50,8 @@ const ClientContainer = () => {
            
         </Slider>
             
-            <ButtonBack  style={{opacity: '0.3', position: 'absolute', left: '-55px', top: '45%', borderRadius: '50%', width:'30px', height: '30px'}} ><img style={{width: '15px'}} alt="back" src="./back.svg"/></ButtonBack>
-            <ButtonNext style={{opacity: '0.3', position: 'absolute', right: '-55px', top: '45%', borderRadius: '50%', width:'30px', height: '30px'}} ><img style={{width: '15px'}} alt="next" src="./next.svg"/></ButtonNext>
+            <ButtonBack  style={{border: '0', opacity: '0.3', position: 'absolute', left: '-55px', top: '45%', borderRadius: '50%', width:'30px', height: '30px'}} ><img style={{width: '15px'}} alt="back" src="./back.svg"/></ButtonBack>
+            <ButtonNext style={{border: '0',opacity: '0.3', position: 'absolute', right: '-55px', top: '45%', borderRadius: '50%', width:'30px', height: '30px'}} ><img style={{width: '15px'}} alt="next" src="./next.svg"/></ButtonNext>
                 </SliderCont>
         
             </CarouselProvider>

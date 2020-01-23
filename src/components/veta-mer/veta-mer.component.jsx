@@ -3,31 +3,23 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const JuiceCont = styled.div`
-    text-align: left;
-    width: 76%;
-
 `
-const Text = styled.h3`
-    font-weight: 400;
-    font-size: 26px;
 
-`
 const Contact = styled.button`
-    padding: 1% 2%;
-    background: white;
-    border: black 1px solid;
+    background: rgba(255,255,255,0.7);
+    border: gray 1px solid;
     cursor: pointer;
+    width: 135px;
+    height: 35px;
+    font-size: 14px;
 `
 
-const Mer = ({topic}) => {
+const VetaMer = () => {
     return (
         <JuiceCont>
-            <Text>
-                Vill du veta mer om {topic}?
-            </Text>
             <Link to={'/om-oss'}>
                 <Contact>
-                    Ta kontakt med oss!
+                    Vill du veta mer?
                 </Contact>
             </Link>
             
@@ -35,4 +27,4 @@ const Mer = ({topic}) => {
     )
 }
 
-export default Mer
+export default VetaMer
