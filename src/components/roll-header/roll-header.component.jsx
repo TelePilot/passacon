@@ -16,7 +16,8 @@ const HeaderCont = styled.div`
     justify-content: flex-start;
     align-items:flex-start;
     flex-flow: column;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     width: 85%;
     margin-left: 7.5%;
     box-sizing: border-box;
