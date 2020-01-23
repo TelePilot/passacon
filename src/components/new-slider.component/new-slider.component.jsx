@@ -28,6 +28,7 @@ const SliderCont = styled.div`
 `
 
 const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
+    console.log(konsulter)
     return (
         <div>
             <SliderBackground onClick={() => click({
@@ -46,8 +47,8 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
             <Slider>
             {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
             </Slider>
-            <ButtonBack onClick={() => setSlide(slide -1)} style={{position: 'absolute', top:'30vh', left:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
-            <ButtonNext onClick={() => setSlide(slide +1)} style={{position: 'absolute', top:'30vh', right:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
+            <ButtonBack onClick={() => setSlide(slide < konsulter.length ? slide - 1 : slide = 9)} style={{position: 'absolute', top:'30vh', left:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
+            <ButtonNext onClick={() => setSlide(slide > konsulter.length ? slide + 1 : slide = 0)} style={{position: 'absolute', top:'30vh', right:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
         </SliderCont>
        
        
