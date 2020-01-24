@@ -14,7 +14,6 @@ import Roller from './roller.component'
 const HomeCarousel = styled(Carousel)`
   overflow: hidden;
   height: 100vh;
-  padding: 0;
   width: 100%;
   ul {
     padding: 0;
@@ -30,12 +29,19 @@ const HomeCarousel = styled(Carousel)`
   }`
   const HomeContainer = styled.div`
   position: relative;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
   }`
+
+const PageContainer = styled.div`
+  width: 100%;
+  padding: 0 8%;
+  box-sizing: border-box;
+`
+
 const Home = () => {
     const [home, setHome] = useState({
         thumbnail: '',
@@ -74,12 +80,16 @@ const Home = () => {
                     }
                 </HomeCarousel>
            : null } 
-            <ClientContainer/>
+           <PageContainer>
+           <ClientContainer/>
             <ArticleContainer content="nyhet || tjanster" />
-            <Tjanster/>
             <Roller />
               <Konsult />  
+              <Tjanster />
               <OmOss />
+           </PageContainer>
+           
+              
         </HomeContainer>
     )
 }

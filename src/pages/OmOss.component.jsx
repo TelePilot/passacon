@@ -3,6 +3,8 @@ import sanityClient from '../Client'
 import styled from 'styled-components'
 import imageUrlBuilder from '@sanity/image-url'
 import PortableText from '@sanity/block-content-to-react'
+import Title from '../components/title/title.component'
+
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
@@ -13,7 +15,7 @@ const OmOssCont = styled.div`
     margin-top: 125px;
     text-align: left;
     box-sizing: border-box;
-    padding: 0 10%;
+
     margin-bottom: 100px;`
 
 const Image = styled.img`
@@ -21,14 +23,14 @@ const Image = styled.img`
     height: auto
 `
 
-const Title = styled.h1`
+const OmOssTitle = styled.h1`
     font-size: 72px;
     width: 400px;
     line-height: 0.9em;
 
 `
 const Desc = styled(PortableText)`
-    width: 90%;
+    width: 100%;
     max-width: 800px
     `
 
@@ -47,9 +49,9 @@ const OmOss = () => {
 
     return (
         <OmOssCont id="om-oss">
-            <h2 style={{fontSize: '48px'}}>Om Oss</h2>
+            <Title title="Om oss" />
             <Image src={urlFor(omOss.bild).url()}/>
-            <Title>{omOss.titel}</Title>
+            <OmOssTitle>{omOss.titel}</OmOssTitle>
             <Desc blocks={omOss.beskrivning} />
         </OmOssCont>
     )

@@ -4,8 +4,7 @@ import sanityClient from '../../Client'
 import ArticleThumbnail from '../article-thumbnail/article-thumbnail.component'
 
 const StyledContainer = styled.div`
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 100px;
@@ -13,6 +12,7 @@ const StyledContainer = styled.div`
 `
 
 const ArticleContainer = ({content}) => {
+
     const [articles, setArticles] = useState([])
 
     useEffect(() => {

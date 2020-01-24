@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ArticleContainer from '../components/article-container/article-container.component'
+import Title from '../components/title/title.component'
 
 const TjanstCont = styled.div`
     margin-top: 100px;
@@ -9,18 +10,10 @@ const TjanstCont = styled.div`
     
 `
 
-const TjanstTitle = styled.h1`
-    font-size: 64px;
-    margin: 0 0 2% 5%;
-    
-`
-
 const Tjanster = () => {
     return (
         <TjanstCont id="tjanster">
-            <TjanstTitle>
-                Våra Tjänster
-            </TjanstTitle>
+            <Title title={'Tjänster'} />
             <ArticleContainer content="tjanster" />
         </TjanstCont>
     )

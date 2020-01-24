@@ -8,7 +8,7 @@ const Cont = styled.div`
     grid-template-columns:1fr 1fr;
     grid-gap: 1em;
     box-sizing: border-box;
-    padding: 2.5% 7.5%;
+    padding: 2.5% 0;
    
 `
 

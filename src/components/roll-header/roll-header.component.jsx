@@ -18,10 +18,10 @@ const HeaderCont = styled.div`
     flex-flow: column;
     min-height: 50vh;
     height: auto;
-    width: 85%;
-    margin-left: 7.5%;
+    width: 100%;
+    
     box-sizing: border-box;
-    padding: 2% 25% 0 5%;
+    padding: 2%;
     color: white;
 `
 
