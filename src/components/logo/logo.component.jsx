@@ -12,15 +12,19 @@ const StyledLogo = styled.img`
     width: 200px;
     height: auto;
     position: absolute;
-    top: 0;
-    left: 0;
-    margin: 2.6rem 6rem;
+    top: 18px;
+    left: 80px;
     z-index: 100;
 `
 
 const Logo = ({logo, setOpen}) => {
     return (
-        <Link onClick={() => setOpen(false)} to="/">
+        <Link onClick={() => {setOpen(false)
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })}} to="/">
              <StyledLogo src={urlFor(logo).url()}/>
         </Link>
        

@@ -46,7 +46,7 @@ const OmOss = () => {
     }, [])
 
     return (
-        <OmOssCont>
+        <OmOssCont id="om-oss">
             <h2 style={{fontSize: '48px'}}>Om Oss</h2>
             <Image src={urlFor(omOss.bild).url()}/>
             <Title>{omOss.titel}</Title>

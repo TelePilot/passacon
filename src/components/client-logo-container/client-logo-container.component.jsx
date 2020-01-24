@@ -31,7 +31,6 @@ const ClientContainer = () => {
         })
         return
       }, [])
-      console.log(client.length)
     return (
         <StyledContainer>
             <CarouselProvider

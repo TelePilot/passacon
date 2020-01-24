@@ -26,9 +26,9 @@ const Roller = () => {
         })
         return
       }, [])
-      console.log(roller)
+
     return (
-        <Cont>
+        <Cont id="roller">
          
             <RollHeader headerImg={roller.thumbnail} headerTitle={roller.titel} headerDesc={roller.beskrivning} />
             <RollContainer roller={roller.roller}/>   

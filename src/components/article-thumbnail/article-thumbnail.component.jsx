@@ -4,6 +4,7 @@ import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
 import { Link } from 'react-router-dom'
 
+
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
@@ -43,7 +44,7 @@ const LinkContainer = styled.div`
 
 const ArticleThumbnail = ({article}) => {
     return (
-        <ArticleLink to={`/artikel/${article.titel}`}>
+        <ArticleLink onClick={() => window.scroll(0,0)} to={`/artikel/${article.titel}`}>
              <Thumbnail style={{backgroundImage: `url(${urlFor(article.thumbnail).url()})`}}/>
              <LinkContainer>
              <ArticleText ><span>{article.titel}<Arrow alt="arrow" src="left-arrow.svg" /></span>

@@ -22,9 +22,9 @@ const Konsulter = () => {
         })
         return
       }, [])
-      console.log(slide)
+  
     return (
-        <div>
+        <div id="konsulter">
             <KonsultContainer setSlide={setSlide} click={setShowing} showing={showing} konsulter={konsult} />
             <KonsultSlider setSlide={setSlide} slide={slide} click={setShowing} showing={showing} konsulter={konsult} />
         </div>

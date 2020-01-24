@@ -17,7 +17,7 @@ const TjanstTitle = styled.h1`
 
 const Tjanster = () => {
     return (
-        <TjanstCont>
+        <TjanstCont id="tjanster">
             <TjanstTitle>
                 Våra Tjänster
             </TjanstTitle>

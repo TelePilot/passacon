@@ -9,6 +9,7 @@ function urlFor(source) {
   return builder.image(source)
 }
 const Cont = styled.div`
+    margin-top: 100px;
     width: 80%;
     min-height: 40vh;
     height: auto

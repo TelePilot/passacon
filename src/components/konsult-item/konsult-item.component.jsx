@@ -50,6 +50,7 @@ const Deets = styled.a`
     color: black;
 `
 const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
+    console.log(slide)
     return (
         <ContCont onClick={() => {clicked({
             pointerEvents: 'auto',

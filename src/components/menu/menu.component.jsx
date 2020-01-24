@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { bool } from 'prop-types'
+import { Link } from 'react-scroll'
 
 const StyledMenu = styled.nav`
 display: flex;
@@ -36,6 +36,7 @@ const NavLink = styled(Link)`
   color: black;
   text-decoration: none;
   transition: color 0.1s linear;
+  cursor:pointer;
   
   @media screen and (max-width: ${({theme }) => theme.mobile}) {
     font-size: 1.5rem;
@@ -48,11 +49,11 @@ const NavLink = styled(Link)`
 `
 
 const Menu = ({ open, header, setOpen }) => {
- 
+  console.log(header.meny)
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>
-            {header ? header.meny.map(item => <NavLink onClick={() => setOpen(!open)} to={`/${item.link}`} key={item._key}>{item.name}</NavLink>): null}
+            {header ? header.meny.map(item => <NavLink activeClass="active" to={`${item.link}`} spy={true} smooth={true} offset={-70} duration={500} onClick={() => setOpen(!open)} key={item._key}>{item.name}</NavLink>): null}
         </StyledMenu>
     )
 }

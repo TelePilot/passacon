@@ -8,12 +8,12 @@ import Mer from '../components/mer/mer.component'
 
 const ArticleCont = styled.div`
     height: auto;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-flow: wrap column;
-    margin-top: 120px;
     margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
@@ -45,7 +45,7 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
-            <Mer topic={article.titel} />
+            <Mer />
         </ArticleCont>
     )
 }

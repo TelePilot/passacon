@@ -3,15 +3,14 @@ import styled from 'styled-components'
 import {bool, func} from 'prop-types'
 
 
+
 const StyledBurger = styled.button`
-position: absolute;
-  top: 5%;
-  left: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2.5rem;
   height: 2.5rem;
+  margin-left: 20px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -25,7 +24,7 @@ position: absolute;
   div {
     width: 2.5rem;
     height: 0.25rem;
-    background: ${({ theme, open }) => open ? theme.secondaryLight : theme.primaryLight};
+    background: ${({ theme, open }) => open ? theme.secondaryLight : theme.burgerDark};
     border-radius: 50px;
     transition: all 0.3s ease-in-out;
     position: relative;

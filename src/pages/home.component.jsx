@@ -6,6 +6,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import ClientContainer from '../components/client-logo-container/client-logo-container.component'
 import ArticleContainer from '../components/article-container/article-container.component'
+import Tjanster from './tjanster.component'
+import Konsult from './konsulter.component'
+import OmOss from './OmOss.component'
+import Roller from './roller.component'
 
 const HomeCarousel = styled(Carousel)`
   overflow: hidden;
@@ -61,7 +65,7 @@ const Home = () => {
         transitionTime: 1000,
       }
     return (
-        <HomeContainer>
+        <HomeContainer id="home">
             {
                 home.length > 0 ?
                 <HomeCarousel {...settings}>
@@ -72,6 +76,10 @@ const Home = () => {
            : null } 
             <ClientContainer/>
             <ArticleContainer content="nyhet || tjanster" />
+            <Tjanster/>
+            <Roller />
+              <Konsult />  
+              <OmOss />
         </HomeContainer>
     )
 }

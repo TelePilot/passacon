@@ -19,11 +19,11 @@ const Contact = styled.button`
     cursor: pointer;
 `
 
-const Mer = ({topic}) => {
+const Mer = () => {
     return (
         <JuiceCont>
             <Text>
-                Vill du veta mer om {topic}?
+                Vill du veta mer?
             </Text>
             <Link to={'/om-oss'}>
                 <Contact>
