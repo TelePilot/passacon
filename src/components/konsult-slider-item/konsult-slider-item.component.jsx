@@ -13,7 +13,7 @@ const ItemCont = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70vh !important;
+    height: 80vh !important;
     width: 100%;
 
 `
@@ -32,10 +32,12 @@ const Text = styled(PortableText)`
 `
 
 const TextContainer = styled.div`
-    width: 50%;
+    width: 60%;
     text-align: left;
-    padding: 0 10%;
-
+    padding: 0 5%;
+    @media only screen and (max-width: 1200px) {
+        padding: 0 1%;
+    }
 `
 
 const SliderItem = ({konsult}) => {

@@ -39,7 +39,7 @@ const KonsultSlider = ({konsulter, showing, click, slide}) => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        slickGoTo: 2
+        slickGoTo: 0
     }
 
     return (

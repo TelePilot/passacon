@@ -17,7 +17,7 @@ transition: opacity  0.1s ease-in-out;
 `
 const SliderCont = styled.div`
     position: fixed;
-    top: 15%;
+    top: 10vh;
     left: 15%;
     width: 70%;
     z-index: 1;
@@ -38,7 +38,7 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
         </SliderBackground>
              <CarouselProvider
         naturalSlideWidth={50}
-        naturalSlideHeight={70}
+        naturalSlideHeight={90}
         totalSlides={9}
         currentSlide={slide}
         infinite={true}
@@ -47,8 +47,8 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
             <Slider>
             {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
             </Slider>
-            <ButtonBack style={{position: 'absolute', top:'30vh', left:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
-            <ButtonNext style={{position: 'absolute', top:'30vh', right:'-50px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
+            <ButtonBack style={{position: 'absolute', top:'30vh', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
+            <ButtonNext style={{position: 'absolute', top:'30vh', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
         </SliderCont>
        
        
