@@ -20,9 +20,7 @@ const Cont = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: column wrap;
-    // &:nth-child(n+5) {
-    //     grid-column: span 2;
-    // }
+    
 `
 const Title = styled.h3`
     font-size: 26px;
@@ -36,12 +34,18 @@ const Icon = styled.img`
     width: 70px;
     height: auto;
     margin: 0 5px 0 0;
- 
+    &:nth-child(4) {
+       width: 50px !important;
+    }
+   
 `
 const TitleCont = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    & ${Icon}:nth-child(2) {
+        width: 50px;
+    }
 `
 
 const RollItem = ({roll}) => {

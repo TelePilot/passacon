@@ -21,17 +21,26 @@ const Cont = styled.div`
     justify-content: flex-start;
     align-items: center;
 `
+const Overlay = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+`
 const Title = styled.h1`
     font-size: 52px;
     margin-left: 5%;
     color: white;
     width: 50%;
+    position: relative;
+    z-index: 2;
 `
 
 
 const ArticleThumbnail = ({ imageDeets }) => {
     return (
         <Cont style={{backgroundImage: `url(${urlFor(imageDeets.thumbnail).url()})`}}>
+            <Overlay/>
             <Title>{imageDeets.titel}</Title>
           
         </Cont>
