@@ -10,6 +10,7 @@ import Tjanster from './tjanster.component'
 import Konsult from './konsulter.component'
 import OmOss from './OmOss.component'
 import Roller from './roller.component'
+import Erfarenhet from './erfarenhet.component'
 
 const HomeCarousel = styled(Carousel)`
   overflow: hidden;
@@ -84,6 +85,7 @@ const Home = () => {
            <ClientContainer/>
             <ArticleContainer content="nyhet || tjanster" />
             <Roller />
+            <Erfarenhet/>
               <Konsult />  
               <Tjanster />
               <OmOss />
