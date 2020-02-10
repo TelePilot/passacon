@@ -23,6 +23,10 @@ const ItemCont = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer
+    @media only screen and (max-width: 480px){
+      height: 350px;
+      width: 80%;
+    }
     
 `
 
@@ -33,12 +37,15 @@ const BoxCont = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
-   flex-flow: column;
+   flex-flow: column wrap;
    box-sizing: border-box;
    padding: 5% 0;
    position: absolute;
    bottom: 0;
    left: 0;
+   @media only screen and (max-width: 480px){
+    padding: 1% 5%;
+}
 `
 
 const Text = styled.p`

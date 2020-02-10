@@ -8,7 +8,12 @@ const KonsultCont = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
     box-sizing: border-box;
-
+    @media only screen and (max-width: 900px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: 480px){
+    grid-template-columns: 1fr;
+}
 
 `
 

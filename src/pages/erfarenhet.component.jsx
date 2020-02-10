@@ -8,6 +8,8 @@ const ErfarenhetCont = styled.div`
     text-align: left;  
     height: auto;  
     margin-bottom: 100px;
+    position: relative;
+   
 `
 
 const Erfarenhet = () => {

@@ -7,15 +7,29 @@ const StyledContainer = styled.ol`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: auto;
+    min-height: auto;
     box-sizing: border-box;
-    padding: 0 2% 5% 2%;
-    grid-gap: 10%;
+    grid-gap: 1em 2em;
     list-style-type: circle;
+   
+    @media only screen and (max-width: 700px){
+        grid-template-columns: 1fr 1fr;
+        padding: 2%;
+    }
+    @media only screen and (max-width: 420px){
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+       
+    }
+  
 `
 const StyledLink = styled(Link)`
     font-size: 18px;
     color: black;
+    @media only screen and (max-width: 420px){
+       margin: 5px 0;
+       
+    }
 `
 
 const ErfarenhetContainer = () => {
