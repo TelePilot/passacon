@@ -68,7 +68,8 @@ const KonsultExtendedPhone = () => {
         })
       })
    }, [id])
-
+   const namn = article.namn ? article.namn.split(" ") : null
+   console.log(namn)
     return (
         <ArticleCont>
             <Thumbnail style={{backgroundImage: `url(${urlFor(article.bild).url()})`}}/>
@@ -81,7 +82,7 @@ const KonsultExtendedPhone = () => {
             </TextText>
                 <a href={`tel:${article.telefon}`}>
                 <Contact>
-                    {`Ta kontakt med ${article.namn}`}
+                    {`Ta kontakt med ${namn ? namn[0] : null}`}
                 </Contact>
                 </a>
                 
