@@ -1,14 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import sanityClient from '../../Client'
-import ArticleThumbnail from '../article-thumbnail/article-thumbnail.component'
+import { Link } from 'react-router-dom'
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.ol`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 100px;
-    grid-gap: 2%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 2% 5% 2%;
+    grid-gap: 10%;
+    list-style-type: circle;
+`
+const StyledLink = styled(Link)`
+    font-size: 18px;
+    color: black;
 `
 
 const ErfarenhetContainer = () => {
@@ -33,7 +40,9 @@ const ErfarenhetContainer = () => {
       }, [])
     return (
         <StyledContainer>
-            {articles ? articles.map((article, id) => <ArticleThumbnail key={id} article={article} /> ) : null}
+            {articles ? articles.map((article, id) => <li onClick={() => window.scroll(0,0)} key={id}>
+            <StyledLink  to={`/erfarenhet/${article.titel}`} >{article.titel}</StyledLink> 
+            </li> ) : null}
         </StyledContainer>
     )
 }

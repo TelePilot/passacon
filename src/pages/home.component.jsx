@@ -84,11 +84,11 @@ const Home = () => {
            <PageContainer>
            <ClientContainer/>
             <ArticleContainer content="nyhet || tjanster" />
+            <Tjanster />
             <Roller />
             <Erfarenhet/>
-              <Konsult />  
-              <Tjanster />
-              <OmOss />
+            <Konsult />  
+            <OmOss />
            </PageContainer>
            
               

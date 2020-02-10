@@ -7,7 +7,7 @@ import Header from './components/header/header.component'
 
 const HomePage = lazy(() => import('./pages/home.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
-
+const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
 
 function App() {
   return (
@@ -25,7 +25,9 @@ function App() {
             <Route
             path={'/artikel/:artikelId'} 
             component={ArticlePage} />
-              
+            <Route
+            path={'/erfarenhet/:artikelId'} 
+            component={ErfarenhetPage} />
             </Suspense>
           </Switch>
  

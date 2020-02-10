@@ -13,7 +13,7 @@ function urlFor(source) {
 const Cont = styled.div`
     width: 100%;
     height: auto;
-    padding: 5%;
+    padding: 5% 8%;
     box-sizing: border-box;
     background: rgba(0,0,0,0.1);
     display: flex;
@@ -34,25 +34,24 @@ const Icon = styled.img`
     width: 70px;
     height: auto;
     margin: 0 5px 0 0;
-    &:nth-child(4) {
-       width: 50px !important;
-    }
+    
    
+`
+const IconDiv = styled.div`
 `
 const TitleCont = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    & ${Icon}:nth-child(2) {
-        width: 50px;
-    }
 `
 
 const RollItem = ({roll}) => {
     return (
         <Cont>
             <TitleCont>
-                <Icon src={urlFor(roll.ikon).url()} />
+                <IconDiv>
+                    <Icon src={urlFor(roll.ikon).url()} />
+                </IconDiv>
                 <Title>{roll.name}</Title>
               
             </TitleCont>

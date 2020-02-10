@@ -1,19 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import ErfarenhetContainer from '../components/article-container/article-container.component'
+import ErfarenhetContainer from '../components/erfarenhet-container/erfarenhet-container'
 import Title from '../components/title/title.component'
 
-const erfarenhetCont = styled.div`
+const ErfarenhetCont = styled.div`
     margin-top: 100px;
-    text-align: left;    
+    text-align: left;  
+    height: auto;  
+    margin-bottom: 100px;
 `
 
 const Erfarenhet = () => {
     return (
-        <erfarenhetCont id="erfarenhet">
+        <ErfarenhetCont id="erfarenhet">
             <Title title={'Erfarenhet'} />
             <ErfarenhetContainer />
-        </erfarenhetCont>
+        </ErfarenhetCont>
     )
 }
 

@@ -37,15 +37,15 @@ const BoxCont = styled.div`
    flex-flow: column;
    box-sizing: border-box;
    padding: 5% 0;
-   
 `
 
 const Text = styled.p`
     text-align: center;
-    margin: 5px 0 10px 0;
+    margin: 5px 0 8px 0;
+    font-weight: 800;
 `
 const Deets = styled.a`
-    margin: 5px;
+    margin: 2px;
     text-decoration: none;
     color: black;
 `

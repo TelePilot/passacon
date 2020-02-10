@@ -9,7 +9,6 @@ const Cont = styled.div`
     grid-gap: 1em;
     box-sizing: border-box;
     padding: 2.5% 0;
-   
 `
 
 

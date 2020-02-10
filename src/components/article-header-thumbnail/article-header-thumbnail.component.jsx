@@ -34,6 +34,7 @@ const Title = styled.h1`
     width: 50%;
     position: relative;
     z-index: 2;
+    line-height: 1em;
 `
 
 
