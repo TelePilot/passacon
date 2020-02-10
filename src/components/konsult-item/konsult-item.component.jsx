@@ -2,11 +2,25 @@ import React from 'react'
 import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
 }
+
+const StyledLink = styled(Link)`
+width: 100%;
+max-width: 350px;
+height: 450px;
+background-repeat: no-repeat;
+background-size: cover;
+cursor: pointer
+@media only screen and (max-width: 480px){
+  height: 350px;
+  width: 80%;
+}
+`
 
 const ContCont = styled.div`
     width: 100%;
@@ -23,9 +37,9 @@ const ItemCont = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer
-    @media only screen and (max-width: 480px){
-      height: 350px;
-      width: 80%;
+    @media only screen and (max-width: 500px){
+      width: 100%;
+      height: 100%;
     }
     
 `
@@ -61,17 +75,20 @@ const Deets = styled.a`
     color: black;
 `
 const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
-
+        console.log(konsult)
     return (
         <ContCont >
-            <ItemCont onClick={() => {clicked({
+            {window.innerWidth <= 500 ?
+            <StyledLink onClick={() => window.scrollTo(0,0)} to={`/konsult/${konsult.namn}`}>
+             <ItemCont style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}></ItemCont>
+            </StyledLink>
+           
+            : <ItemCont onClick={() => {clicked({
             pointerEvents: 'auto',
             opacity: 1
         })
        setSlide(slide)
-        }} style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}>
-                
-            </ItemCont>
+        }} style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}></ItemCont>}
             <BoxCont>
                     <Text>{konsult.namn}</Text>
                     <Deets href={`Tel:${konsult.telefon}`}>Tel: {konsult.telefon}</Deets>

@@ -8,6 +8,7 @@ import Header from './components/header/header.component'
 const HomePage = lazy(() => import('./pages/home.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
+const KonsultPage = lazy(() => import('./components/konsult-extended-phone/konsult-extended-phone.component'))
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             <Route
             path={'/erfarenhet/:artikelId'} 
             component={ErfarenhetPage} />
+            <Route
+            path={'/konsult/:artikelId'} 
+            component={KonsultPage} />
             </Suspense>
           </Switch>
  
