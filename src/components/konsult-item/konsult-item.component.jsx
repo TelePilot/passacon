@@ -13,7 +13,8 @@ const ContCont = styled.div`
     height: auto;
     display: flex;
     justify-content: center
-    cursor: pointer`
+  
+    position: relative;`
 
 const ItemCont = styled.div`
     width: 100%;
@@ -21,10 +22,8 @@ const ItemCont = styled.div`
     height: 450px;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-flow: wrap column;
+    cursor: pointer
+    
 `
 
 const BoxCont = styled.div`
@@ -37,6 +36,9 @@ const BoxCont = styled.div`
    flex-flow: column;
    box-sizing: border-box;
    padding: 5% 0;
+   position: absolute;
+   bottom: 0;
+   left: 0;
 `
 
 const Text = styled.p`
@@ -54,19 +56,20 @@ const Deets = styled.a`
 const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
 
     return (
-        <ContCont onClick={() => {clicked({
+        <ContCont >
+            <ItemCont onClick={() => {clicked({
             pointerEvents: 'auto',
             opacity: 1
         })
        setSlide(slide)
-        }}>
-            <ItemCont style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}>
-                <BoxCont>
+        }} style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}>
+                
+            </ItemCont>
+            <BoxCont>
                     <Text>{konsult.namn}</Text>
                     <Deets href={`Tel:${konsult.telefon}`}>Tel: {konsult.telefon}</Deets>
                     <Deets href={`mailto:${konsult.email}`}>{konsult.email}</Deets>
                 </BoxCont>
-            </ItemCont>
         </ContCont>
         
     )
