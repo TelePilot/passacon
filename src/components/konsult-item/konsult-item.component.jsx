@@ -46,6 +46,8 @@ const Text = styled.p`
 `
 const Deets = styled.a`
     margin: 2px;
+    position: relative;
+    z-index: 1;
     text-decoration: none;
     color: black;
 `
