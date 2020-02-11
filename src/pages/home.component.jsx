@@ -82,8 +82,8 @@ const Home = () => {
                 </HomeCarousel>
            : null } 
            <PageContainer>
-           <ClientContainer/>
-            <ArticleContainer content="nyhet || tjanster" />
+            <ClientContainer/>
+            <ArticleContainer content="nyhet" />
             <Tjanster />
             <Roller />
             <Erfarenhet/>
