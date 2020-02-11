@@ -13,7 +13,7 @@ const TjanstCont = styled.div`
 const Tjanster = () => {
     return (
         <TjanstCont id="tjanster">
-            <Title title={'Tjänster'} />
+            <Title title={'Våra tjänster'} />
             <ArticleContainer content="tjanster" />
         </TjanstCont>
     )
