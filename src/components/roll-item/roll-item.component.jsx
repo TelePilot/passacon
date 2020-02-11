@@ -5,6 +5,7 @@ import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
 import VetaMer from '../veta-mer/veta-mer.component'
 
+
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)
@@ -31,13 +32,16 @@ const Desc = styled(PortableText)`
 `
 
 const Icon = styled.img`
-    width: 70px;
     height: auto;
     margin: 0 5px 0 0;
     
    
 `
 const IconDiv = styled.div`
+    img:nth-child(4) {
+        width: 30px;
+    }
+
 `
 const TitleCont = styled.div`
     display: flex;
@@ -47,10 +51,10 @@ const TitleCont = styled.div`
 
 const RollItem = ({roll}) => {
     return (
-        <Cont>
+        <Cont className="icon">
             <TitleCont>
                 <IconDiv>
-                    <Icon src={urlFor(roll.ikon).url()} />
+                    <Icon className="icon-img" src={urlFor(roll.ikon).url()} />
                 </IconDiv>
                 <Title>{roll.name}</Title>
               

@@ -1,48 +1,18 @@
 import React from 'react'
-import sanityClient from '../../Client'
-import imageUrlBuilder from '@sanity/image-url'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import KonsultImage from '../konsult-image/konsult-image.component'
+import KonsultImagePhone from '../konsult-image-phone/konsult-image-phone.component'
+import './konsult-item.styles.css'
 
-const builder = imageUrlBuilder(sanityClient)
-function urlFor(source) {
-  return builder.image(source)
-}
-
-const StyledLink = styled(Link)`
-width: 100%;
-max-width: 350px;
-height: 450px;
-background-repeat: no-repeat;
-background-size: cover;
-cursor: pointer
-@media only screen and (max-width: 480px){
-  height: 350px;
-  width: 80%;
-}
-`
 
 const ContCont = styled.div`
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center
-  
-    position: relative;`
+    position: relative;
+    `
 
-const ItemCont = styled.div`
-    width: 100%;
-    max-width: 350px;
-    height: 450px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer
-    @media only screen and (max-width: 500px){
-      width: 100%;
-      height: 100%;
-    }
-    
-`
 
 const BoxCont = styled.div`
     height: auto;
@@ -75,20 +45,14 @@ const Deets = styled.a`
     color: black;
 `
 const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
-        console.log(konsult)
     return (
-        <ContCont >
-            {window.innerWidth <= 500 ?
-            <StyledLink onClick={() => window.scrollTo(0,0)} to={`/konsult/${konsult.namn}`}>
-             <ItemCont style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}></ItemCont>
-            </StyledLink>
-           
-            : <ItemCont onClick={() => {clicked({
-            pointerEvents: 'auto',
-            opacity: 1
-        })
-       setSlide(slide)
-        }} style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}></ItemCont>}
+        <ContCont className="konsult-item" >
+           <KonsultImagePhone konsult={konsult} />
+            <KonsultImage 
+            clicked={clicked}
+            setSlide={setSlide}
+            slide={slide}
+            konsult={konsult} /> 
             <BoxCont>
                     <Text>{konsult.namn}</Text>
                     <Deets href={`Tel:${konsult.telefon}`}>Tel: {konsult.telefon}</Deets>

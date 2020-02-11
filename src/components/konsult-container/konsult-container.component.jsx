@@ -11,7 +11,7 @@ const KonsultCont = styled.div`
     @media only screen and (max-width: 900px){
         grid-template-columns: 1fr 1fr;
     }
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 640px){
     grid-template-columns: 1fr;
 }
 
