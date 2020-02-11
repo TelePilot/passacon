@@ -3,35 +3,61 @@ import styled from 'styled-components'
 import sanityClient from '../../Client'
 import { Link } from 'react-router-dom'
 
-const StyledContainer = styled.ol`
+const StyledContainer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     min-height: auto;
     box-sizing: border-box;
-    grid-gap: 1em 2em;
+    grid-gap: 1em 3em;
     list-style-type: circle;
    
-    @media only screen and (max-width: 700px){
+    @media only screen and (max-width: 900px){
         grid-template-columns: 1fr 1fr;
         padding: 2%;
     }
-    @media only screen and (max-width: 420px){
+    @media only screen and (max-width: 640px){
         grid-template-columns: 1fr;
         padding: 0 5%;
+        
        
     }
   
 `
+const Item = styled.div`
+    width: 100%;
+    height: 250px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5%;
+    text-align: center;
+    @media only screen and (max-width: 640px){
+       height: 150px;
+        
+       
+    }
+`
+
 const StyledLink = styled(Link)`
     font-size: 18px;
     color: black;
+    text-align: center;
     @media only screen and (max-width: 420px){
        margin: 5px 0;
        
     }
 `
-
+const Arrow = styled.img`
+    width: 15px;
+    height: auto;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin-bottom: -2.8px;
+    margin-left: 5px;
+`
 const ErfarenhetContainer = () => {
 
     const [articles, setArticles] = useState([])
@@ -54,9 +80,10 @@ const ErfarenhetContainer = () => {
       }, [])
     return (
         <StyledContainer>
-            {articles ? articles.map((article, id) => <li onClick={() => window.scroll(0,0)} key={id}>
-            <StyledLink  to={`/erfarenhet/${article.titel}`} >{article.titel}</StyledLink> 
-            </li> ) : null}
+            {articles ? articles.map((article, id) =><StyledLink  key={id} onClick={() => window.scroll(0,0)} to={`/erfarenhet/${article.titel}`} > <Item >
+            {article.titel}
+            </Item>
+            <Arrow alt="arrow" src="left-arrow.svg" /></StyledLink>  ) : null}
         </StyledContainer>
     )
 }
