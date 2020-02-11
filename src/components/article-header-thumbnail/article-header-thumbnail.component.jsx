@@ -11,7 +11,7 @@ function urlFor(source) {
 const Cont = styled.div`
     margin-top: 100px;
     width: 80%;
-    min-height: 40vh;
+    min-height: 45vh;
     height: auto
     text-align: left;
     position: relative;
@@ -40,7 +40,7 @@ const Title = styled.h1`
 
 const ArticleThumbnail = ({ imageDeets }) => {
     return (
-        <Cont style={{backgroundImage: `url(${urlFor(imageDeets.thumbnail).url()})`}}>
+        <Cont style={{backgroundImage: `url(${urlFor(imageDeets.focusedThumbnail).url()})`}}>
             <Overlay/>
             <Title>{imageDeets.titel}</Title>
           
