@@ -46,8 +46,8 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
             <Slider>
             {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
             </Slider>
-            <ButtonBack style={{position: 'absolute', top:'30vh', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
-            <ButtonNext style={{position: 'absolute', top:'30vh', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
+            <ButtonBack style={{position: 'absolute', top:'35%', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
+            <ButtonNext style={{position: 'absolute', top:'35%', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
         </SliderCont>
        
        
