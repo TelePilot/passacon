@@ -37,7 +37,7 @@ const Title = styled.h1`
     width: 50%;
     height: auto;
     text-align: left;
-    font-size: 5vw;
+    font-size: 64px;
     z-index: 1;
 `
 const Overlay = styled.div`
