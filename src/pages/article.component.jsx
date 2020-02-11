@@ -17,7 +17,10 @@ const ArticleCont = styled.div`
     margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
-    
+    @media only screen and (max-width: 640px){
+        grid-template-columns: 1fr ;
+        grid-gap: 0;
+    }
 
 `
 const TextCont = styled.div`

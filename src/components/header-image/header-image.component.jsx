@@ -39,6 +39,14 @@ const Title = styled.h1`
     text-align: left;
     font-size: 64px;
     z-index: 1;
+    @media screen and (max-width: 800px){
+        font-size: 42px;
+    }
+    @media screen and (max-width: 500px){
+        font-size: 32px;
+        width: 80%;
+        padding-left: 3.5rem; 
+    }
 `
 const Overlay = styled.div`
     width: 100%;

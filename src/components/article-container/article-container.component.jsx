@@ -14,6 +14,7 @@ const StyledContainer = styled.div`
     }
     @media only screen and (max-width: 640px){
         grid-template-columns: 1fr ;
+        grid-gap: 0;
     }
 `
 

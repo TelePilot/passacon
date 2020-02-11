@@ -24,9 +24,15 @@ const Image = styled.img`
 `
 
 const OmOssTitle = styled.h1`
-    font-size: 72px;
+    font-size: 64px;
     width: 400px;
     line-height: 0.9em;
+    @media screen and (max-width: 800px){
+        font-size: 36px;
+    }
+    @media screen and (max-width: 500px){
+        font-size: 28px;
+    }
 
 `
 const Desc = styled(PortableText)`

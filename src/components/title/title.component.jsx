@@ -10,7 +10,9 @@ const TitleCont = styled.div`
 const TitleText = styled.h2`
     font-size: 64px;
     margin-bottom: 2%;
-    
+    @media screen and (max-width: 800px){
+        font-size: 36px;
+    }
 `
 
 const Title = ({title}) => {
