@@ -9,6 +9,12 @@ const StyledContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 100px;
     grid-gap: 2%;
+    @media only screen and (max-width: 1100px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: 640px){
+        grid-template-columns: 1fr ;
+    }
 `
 
 const ArticleContainer = ({content}) => {

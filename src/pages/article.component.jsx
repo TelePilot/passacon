@@ -17,6 +17,8 @@ const ArticleCont = styled.div`
     margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
+    
+
 `
 const TextCont = styled.div`
     width: 100%;
