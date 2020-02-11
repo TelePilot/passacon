@@ -28,7 +28,6 @@ const SliderCont = styled.div`
 `
 
 const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
-    console.log(slide)
     return (
         <div>
             <SliderBackground onClick={() => click({
