@@ -26,16 +26,19 @@ const StyledContainer = styled.div`
 `
 const Item = styled.div`
     width: 100%;
-    height: 250px;
-    border: 1px solid black;
+    height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 5%;
     text-align: center;
+    border-radius: 10px;
+    -webkit-box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
+box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
     @media only screen and (max-width: 640px){
-       height: 150px;
+       height: 125px;
         
        
     }
@@ -45,6 +48,7 @@ const StyledLink = styled(Link)`
     font-size: 18px;
     color: black;
     text-align: center;
+    text-decoration: none;
     @media only screen and (max-width: 420px){
        margin: 5px 0;
        
@@ -81,9 +85,9 @@ const ErfarenhetContainer = () => {
     return (
         <StyledContainer>
             {articles ? articles.map((article, id) =><StyledLink  key={id} onClick={() => window.scroll(0,0)} to={`/erfarenhet/${article.titel}`} > <Item >
-            {article.titel}
+            <p>{article.titel} <span> <Arrow alt="arrow" src="left-arrow.svg" /></span></p>
             </Item>
-            <Arrow alt="arrow" src="left-arrow.svg" /></StyledLink>  ) : null}
+           </StyledLink>  ) : null}
         </StyledContainer>
     )
 }

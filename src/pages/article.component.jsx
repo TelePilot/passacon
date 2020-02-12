@@ -14,7 +14,6 @@ const ArticleCont = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-flow: wrap column;
-    margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
     @media only screen and (max-width: 640px){

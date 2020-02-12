@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const JuiceCont = styled.div`
     text-align: left;
     width: 76%;
+    margin-bottom: 100px;
 
 `
 const Text = styled.h3`
