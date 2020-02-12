@@ -79,7 +79,7 @@ const Contact = () => {
 
                 </ContactTextCont>
                 
-            <MapCont><iframe title="maps" width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Sveav%C3%A4gen%2020%2C%20111%2057%2C%20Stockholm%2C%20Sweden+(Passacon)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">find my coordinates</a></iframe></MapCont>
+            <MapCont><iframe title="maps" width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Sveav%C3%A4gen%2020%2C%20111%2057%2C%20Stockholm%2C%20Sweden+(Passacon)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"><a href="https://www.maps.ie/coordinates.html">find my coordinates</a></iframe></MapCont>
         </ContactCont>
         </div>
        

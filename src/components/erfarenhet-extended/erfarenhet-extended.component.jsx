@@ -13,7 +13,6 @@ const ArticleCont = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-flow: wrap column;
-    margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
 `
@@ -22,6 +21,7 @@ const TextCont = styled.div`
     text-align: left;
     box-sizing: border-box;
     padding: 0 12%;
+    
 `
 const Text = styled(PortableText)`
 margin-top: 120px;`

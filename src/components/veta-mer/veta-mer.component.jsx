@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const JuiceCont = styled.div`
  
@@ -15,11 +14,11 @@ const Contact = styled.button`
     font-size: 14px;
     
 `
-
+const Link = styled.a``
 const VetaMer = () => {
     return (
         <JuiceCont>
-            <Link to={'/om-oss'}>
+            <Link href="mailto:info@passacon.se">
                 <Contact>
                     Vill du veta mer?
                 </Contact>

@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './theme.styles'
 import Header from './components/header/header.component'
 import Footer from './components/footer/footer-component'
-import { createBrowserHistory }from 'history'
 import Home from './pages/home.component'
 
 
@@ -23,6 +22,7 @@ const Kontakter = lazy(() => import('./pages/kontakter.component'))
 
 function App() {
   return (
+    
        <div className="App">
         
          <ThemeProvider theme={theme}>
@@ -30,10 +30,7 @@ function App() {
           <Switch>
             <Suspense fallback={<p>Loading</p>}>
             <Route 
-         onUpdate={() => window.scrollTo(0, 0)} history={createBrowserHistory()}
-
             path={'/'}
-            
             component={Home}
             exact
             />

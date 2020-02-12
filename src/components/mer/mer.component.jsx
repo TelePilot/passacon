@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const JuiceCont = styled.div`
     text-align: left;
@@ -19,6 +18,7 @@ const Contact = styled.button`
     border: black 1px solid;
     cursor: pointer;
 `
+const Link = styled.a``
 
 const Mer = () => {
     return (
@@ -26,7 +26,7 @@ const Mer = () => {
             <Text>
                 Vill du veta mer?
             </Text>
-            <Link to={'/om-oss'}>
+            <Link href="mailto:info@passacon.se">
                 <Contact>
                     Ta kontakt med oss!
                 </Contact>

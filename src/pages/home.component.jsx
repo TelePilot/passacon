@@ -32,7 +32,7 @@ const HomeCarousel = styled(Carousel)`
   const HomeContainer = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
+  height: 9200px;
   overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
@@ -44,8 +44,7 @@ const PageContainer = styled.div`
   box-sizing: border-box;
 `
 
-const Home = ({history}) => {
-  console.log(history)
+const Home = () => {
     const [home, setHome] = useState({
         thumbnail: '',
         titel: ''
