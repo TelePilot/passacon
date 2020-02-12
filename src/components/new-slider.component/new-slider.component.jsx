@@ -53,7 +53,7 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
         <CloseButton onClick={() => click({
             pointerEvents: 'none',
             opacity: 0
-        })}><i class="fas fa-times-circle fa-2x"></i></CloseButton>
+        })}><i className="fas fa-times-circle fa-2x"></i></CloseButton>
             <Slider>
             {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
             </Slider>

@@ -11,6 +11,7 @@ import Konsult from './konsulter.component'
 import OmOss from './OmOss.component'
 import Roller from './roller.component'
 import Erfarenhet from './erfarenhet.component'
+import Contact from './contact.component'
 
 const HomeCarousel = styled(Carousel)`
   overflow: hidden;
@@ -89,6 +90,7 @@ const Home = () => {
             <Erfarenhet/>
             <Konsult />  
             <OmOss />
+            <Contact />
            </PageContainer>
            
               

@@ -34,13 +34,15 @@ const Thumbnail = styled.div`
 const Title = styled.h1`
     color: ${({theme}) => theme.secondaryLight};
     padding-left: 6rem; 
-    width: 50%;
+    width: 70%;
+    max-width: 700px;
     height: auto;
     text-align: left;
     font-size: 64px;
     z-index: 1;
     @media screen and (max-width: 800px){
         font-size: 42px;
+        width: 80%;
     }
     @media screen and (max-width: 500px){
         font-size: 32px;
