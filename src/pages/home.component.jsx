@@ -44,7 +44,8 @@ const PageContainer = styled.div`
   box-sizing: border-box;
 `
 
-const Home = () => {
+const Home = ({history}) => {
+  console.log(history)
     const [home, setHome] = useState({
         thumbnail: '',
         titel: ''
@@ -72,6 +73,7 @@ const Home = () => {
         showStatus: false,
         transitionTime: 1000,
       }
+
     return (
         <HomeContainer id="home">
             {

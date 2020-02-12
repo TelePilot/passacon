@@ -45,8 +45,8 @@ box-shadow: -2px 3px 18px 0px rgba(0,0,0,0.25);
         margin-top: -2px;
         margin-left: -2px;
         -webkit-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
--moz-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
+        -moz-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
+        box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
     }
 `
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { bool } from 'prop-types'
-import { Link } from 'react-scroll'
+import { Link as Scroll } from 'react-scroll'
 
 const StyledMenu = styled.nav`
 display: flex;
@@ -26,7 +26,7 @@ transition: transform 0.3s ease-in-out;
 
 }
 `
-const NavLink = styled(Link)`
+const NavLink = styled(Scroll)`
 
   font-size: 1rem;
   text-transform: uppercase;

@@ -5,9 +5,10 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './theme.styles'
 import Header from './components/header/header.component'
 import Footer from './components/footer/footer-component'
-import ScrollToTop from './scrollToTop'
+import { createBrowserHistory }from 'history'
+import Home from './pages/home.component'
 
-const HomePage = lazy(() => import('./pages/home.component'))
+
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
 const KonsultPage = lazy(() => import('./components/konsult-extended-phone/konsult-extended-phone.component'))
@@ -23,14 +24,17 @@ const Kontakter = lazy(() => import('./pages/kontakter.component'))
 function App() {
   return (
        <div className="App">
-         <ScrollToTop/>
+        
          <ThemeProvider theme={theme}>
            <Header/>
           <Switch>
             <Suspense fallback={<p>Loading</p>}>
             <Route 
+         onUpdate={() => window.scrollTo(0, 0)} history={createBrowserHistory()}
+
             path={'/'}
-            component={HomePage}
+            
+            component={Home}
             exact
             />
             <Route
