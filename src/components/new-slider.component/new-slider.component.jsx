@@ -26,6 +26,13 @@ const SliderCont = styled.div`
     transition: opacity  0.1s ease-in-out;
 
 `
+const CloseButton = styled.div`
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 50;
+    cursor: pointer;
+`
 
 const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
     return (
@@ -42,12 +49,16 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
         currentSlide={slide}
         infinite={true}
       >
-        <SliderCont  style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
+        <SliderCont style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
+        <CloseButton onClick={() => click({
+            pointerEvents: 'none',
+            opacity: 0
+        })}><i class="fas fa-times-circle fa-2x"></i></CloseButton>
             <Slider>
             {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
             </Slider>
-            <ButtonBack style={{position: 'absolute', top:'35%', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
-            <ButtonNext style={{position: 'absolute', top:'35%', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
+            <ButtonBack style={{position: 'absolute', top:'32vh', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
+            <ButtonNext style={{position: 'absolute', top:'32vh', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>
         </SliderCont>
        
        
