@@ -34,13 +34,19 @@ const Item = styled.div`
     padding: 5%;
     text-align: center;
     border-radius: 10px;
-    -webkit-box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
--moz-box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
-box-shadow: -2px 3px 22px 0px rgba(0,0,0,0.25);
+    transition: all ease-in-out .2s;
+    -webkit-box-shadow: -2px 3px 18px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: -2px 3px 18px 0px rgba(0,0,0,0.25);
+box-shadow: -2px 3px 18px 0px rgba(0,0,0,0.25);
     @media only screen and (max-width: 640px){
-       height: 125px;
-        
-       
+       height: 125px;   
+    }
+    &:hover {
+        margin-top: -2px;
+        margin-left: -2px;
+        -webkit-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
+-moz-box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
+box-shadow: -1px 5px 22px 0px rgba(0,0,0,0.35);
     }
 `
 
@@ -84,7 +90,7 @@ const ErfarenhetContainer = () => {
       }, [])
     return (
         <StyledContainer>
-            {articles ? articles.map((article, id) =><StyledLink  key={id} onClick={() => window.scroll(0,0)} to={`/erfarenhet/${article.titel}`} > <Item >
+            {articles ? articles.map((article, id) =><StyledLink  key={id} to={`/erfarenhet/${article.titel}`} > <Item >
             <p>{article.titel} <span> <Arrow alt="arrow" src="left-arrow.svg" /></span></p>
             </Item>
            </StyledLink>  ) : null}

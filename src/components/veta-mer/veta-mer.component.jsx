@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const JuiceCont = styled.div`
+ 
 `
 
 const Contact = styled.button`
@@ -12,6 +13,7 @@ const Contact = styled.button`
     width: 135px;
     height: 35px;
     font-size: 14px;
+    
 `
 
 const VetaMer = () => {

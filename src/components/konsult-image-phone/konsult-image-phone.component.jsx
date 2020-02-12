@@ -34,7 +34,7 @@ const ItemCont = styled.div`
     `
 const KonsultImagePhone = ({konsult}) => {
     return (
-        <StyledLink className="phone" onClick={() => window.scrollTo(0,0)} to={`/konsult/${konsult.namn}`}>
+        <StyledLink className="phone"  to={`/konsult/${konsult.namn}`}>
           <ItemCont style={{backgroundImage: `url(${urlFor(konsult.bild).url()})`}}></ItemCont>
        </StyledLink>
     )

@@ -26,9 +26,9 @@ const ArticleCont = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-flow: wrap column;
-    margin-bottom: 100px;
     box-sizing: border-box;
     padding: 0 5%;
+    
 `
 const TextCont = styled.div`
     width: 100%;
@@ -54,6 +54,8 @@ const Contact = styled.button`
     background: white;
     border: black 1px solid;
     cursor: pointer;
+    margin-bottom: 100px;
+   
 `
 
 const KonsultExtendedPhone = () => {
