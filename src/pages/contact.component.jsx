@@ -65,7 +65,7 @@ const Contact = () => {
 
                 </ContactTextCont>
                 
-            <MapCont><iframe width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=350&amp;hl=en&amp;q=20%2C%20h%C3%B6torget%2C%20111%2057%2C%20stockholm%2C%20sweden+(Passacon)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">find my location</a></iframe></MapCont>
+            <MapCont><iframe title="maps" width="100%" height="350" src="https://maps.google.com/maps?width=100%&amp;height=350&amp;hl=en&amp;q=20%2C%20h%C3%B6torget%2C%20111%2057%2C%20stockholm%2C%20sweden+(Passacon)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">find my location</a></iframe></MapCont>
         </ContactCont>
         </div>
        

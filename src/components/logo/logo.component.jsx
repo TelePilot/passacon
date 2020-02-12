@@ -15,6 +15,9 @@ const StyledLogo = styled.img`
     top: 18px;
     left: 80px;
     z-index: 100;
+    @media screen and (max-width: 800px){
+        width: 150px;
+    }
 `
 
 const Logo = ({logo, setOpen}) => {
