@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import sanityClient from '../Client'
+import React from 'react'
 import styled from 'styled-components'
 import RollHeader from '../components/roll-header/roll-header.component'
 import RollContainer from '../components/roll-container/roll-container.component'
@@ -13,20 +12,8 @@ const Cont = styled.div`
 `
 
 
-const Roller = () => {
-    const [roller, setRoller] = useState({
-      roller: []
-    })
-    useEffect(() => {
-        const rollQuery = `*[_type == "roller"]`
-
-        sanityClient.fetch(rollQuery).then(roller => {
-          roller.forEach(roll => {
-            setRoller(roll)
-          })
-        })
-        return
-      }, [])
+const Roller = ({roller}) => {
+    
 
     return (
         <Cont id="roller">

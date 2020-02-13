@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import sanityClient from '../../Client'
 import { Link } from 'react-router-dom'
 
 const StyledContainer = styled.div`
@@ -68,29 +67,12 @@ const Arrow = styled.img`
     margin-bottom: -2.8px;
     margin-left: 5px;
 `
-const ErfarenhetContainer = () => {
+const ErfarenhetContainer = ({erfarenhet}) => {
 
-    const [articles, setArticles] = useState([])
-
-    useEffect(() => {
-        const articleQuery = `*[_type == "erfarenhet"] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
-
-        sanityClient.fetch(articleQuery).then(article => {
-            
-          article.forEach(article => {
-              articleArray.push(article)
-          })
-          setArticles(articleArray)
-        })
-        return
-      }, [])
+    
     return (
         <StyledContainer>
-            {articles ? articles.map((article, id) =><StyledLink  key={id} to={`/erfarenhet/${article.titel}`} > <Item >
+            {erfarenhet ? erfarenhet.map((article, id) =><StyledLink  key={id} to={`/erfarenhet/${article.titel}`} > <Item >
             <p>{article.titel} <span> <Arrow alt="arrow" src="left-arrow.svg" /></span></p>
             </Item>
            </StyledLink>  ) : null}

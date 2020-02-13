@@ -12,11 +12,11 @@ const ErfarenhetCont = styled.div`
    
 `
 
-const Erfarenhet = () => {
+const Erfarenhet = ({erfarenhet}) => {
     return (
         <ErfarenhetCont id="erfarenhet">
             <Title title={'Erfarenhet'} />
-            <ErfarenhetContainer />
+            <ErfarenhetContainer erfarenhet={erfarenhet} />
         </ErfarenhetCont>
     )
 }

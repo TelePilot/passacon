@@ -1,4 +1,4 @@
-import React, { lazy, Suspense} from 'react'
+import React, { lazy, Suspense, useState, useEffect} from 'react'
 import { Route, Switch} from 'react-router-dom'
 import './App.css'
 import { ThemeProvider } from 'styled-components'
@@ -6,6 +6,7 @@ import { theme } from './theme.styles'
 import Header from './components/header/header.component'
 import Footer from './components/footer/footer-component'
 import Home from './pages/home.component'
+import sanityClient from './Client'
 
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
@@ -20,8 +21,128 @@ const Partners = lazy(() => import('./pages/partners.component'))
 const Kontakter = lazy(() => import('./pages/kontakter.component'))
 
 function App() {
+  const [home, setHome] = useState({
+    thumbnail: '',
+    titel: ''
+}) 
+
+useEffect(() => {
+ 
+    const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
+        thumbnail, titel
+    }`
+
+    sanityClient.fetch(homeQuery).then(home => {
+        const homeArray = []
+      home.forEach(home=> {
+          homeArray.push(home)
+      })
+      setHome(homeArray)
+    })
   
-  
+   return
+  }, [])
+  const [contact, setContact] = useState('')
+    useEffect(() => {
+        const contactQuery = `*[_type == "kontakt"]`
+ 
+        sanityClient.fetch(contactQuery).then(contact => { 
+         contact.forEach(contact => {
+             setContact(contact)
+         })
+       })
+    }, [])
+    const [tjanster, setTjanster] = useState([])
+    useEffect(() => {
+        const articleQuery = `*[_type == "artikel" && tjanster] | order(datum desc)
+        {
+            thumbnail, titel
+        }`
+        const articleArray = []
+
+        sanityClient.fetch(articleQuery).then(article => {
+            
+          article.forEach(article => {
+        
+              articleArray.push(article)
+          })
+          setTjanster(articleArray)
+        })
+        return }, [])
+        const [roller, setRoller] = useState({
+          roller: []
+        })
+        useEffect(() => {
+            const rollQuery = `*[_type == "roller"]`
+    
+            sanityClient.fetch(rollQuery).then(roller => {
+              roller.forEach(roll => {
+                setRoller(roll)
+              })
+            })
+            return
+          }, [])
+
+    const [omOss, setOmOss] = useState('')
+    useEffect(() => {
+        const omOssQuery = `*[_type == "omOss"]`
+ 
+        sanityClient.fetch(omOssQuery).then(omOss => { 
+         omOss.forEach(omOss => {
+             setOmOss(omOss)
+         })
+       })
+    }, [])
+    const [nyheter, setNyheter] = useState([])
+ 
+    useEffect(() => {
+       
+        const articleQuery = `*[_type == "artikel" && nyhet] | order(datum desc)
+        {
+            thumbnail, titel
+        }`
+        const articleArray = []
+
+        sanityClient.fetch(articleQuery).then(article => {
+            
+          article.forEach(article => {
+              articleArray.push(article)
+          })
+          setNyheter(articleArray)
+        })
+        return 
+      }, [])
+      const [erfarenhet, setErfarenhet] = useState([])
+
+    useEffect(() => {
+        const articleQuery = `*[_type == "erfarenhet"] | order(datum desc)
+        {
+            thumbnail, titel
+        }`
+        const articleArray = []
+
+        sanityClient.fetch(articleQuery).then(article => {
+            
+          article.forEach(article => {
+              articleArray.push(article)
+          })
+          setErfarenhet(articleArray)
+        })
+        return
+      }, [])
+      const [konsult, setKonsult] = useState([])
+      useEffect(() => {
+          const konsultQuery = `*[_type == "konsult"] | order(namn asc)`
+          const konsultArray = []
+          sanityClient.fetch(konsultQuery).then(konsult => {
+              
+            konsult.forEach(konsult => {
+                konsultArray.push(konsult)
+            })
+            setKonsult(konsultArray)
+          })
+          return
+        }, [])
   return (
     
        <div className="App">
@@ -37,7 +158,7 @@ function App() {
            
             exact
             >
-              <Home/>
+              <Home erfarenhet={erfarenhet} home={home} tjanster={tjanster} nyheter={nyheter} omOss={omOss} contact={contact} konsult={konsult} roller={roller} />
             </Route>
             <Route
             path={'/artikel/:artikelId'} 

@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import sanityClient from '../Client'
 import ArticleContainer from '../components/article-container/article-container.component'
 import Title from '../components/title/title.component'
 
@@ -13,31 +12,12 @@ const TjanstCont = styled.div`
     
 `
 
-const Tjanster = () => {
-    const [articles, setArticles] = useState([])
-    const unmounted = useRef(false)
-    useEffect(() => {
-        const articleQuery = `*[_type == "artikel" && tjanster] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
-
-        sanityClient.fetch(articleQuery).then(article => {
-            
-          article.forEach(article => {
-        
-              articleArray.push(article)
-          })
-          setArticles(articleArray)
-        })
-        return () => {
-            unmounted.current = true
-        }      }, [])
+const Tjanster = ({tjanster}) => {
+    
     return (
         <TjanstCont id="tjanster">
             <Title title={'Våra tjänster'} />
-            <ArticleContainer articles={articles} />
+            <ArticleContainer articles={tjanster} />
         </TjanstCont>
     )
 }

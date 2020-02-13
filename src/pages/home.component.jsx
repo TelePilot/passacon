@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React from 'react'
 import HeaderImage from '../components/header-image/header-image.component'
 import styled from 'styled-components'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -11,7 +11,6 @@ import Roller from './roller.component'
 import Erfarenhet from './erfarenhet.component'
 import Contact from './contact.component'
 import Nyheter from './nyheter.component'
-import sanityClient from '../Client'
 
 const HomeCarousel = styled(Carousel)`
   height: 100vh;
@@ -45,31 +44,8 @@ const PageContainer = styled.div`
   
 `
 
-const Home = () => {
-  const [home, setHome] = useState({
-    thumbnail: '',
-    titel: ''
-}) 
-const unmounted = useRef(false)
-
-useEffect(() => {
+const Home = ({konsult, home, roller, tjanster, nyheter, contact, omOss, erfarenhet}) => {
  
-    const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
-        thumbnail, titel
-    }`
-
-    sanityClient.fetch(homeQuery).then(home => {
-        const homeArray = []
-      home.forEach(home=> {
-          homeArray.push(home)
-      })
-      setHome(homeArray)
-    })
-  
-   return () => {
-     unmounted.current = true
-   }
-  }, [])
       const settings = {
         autoPlay: true,
         stopOnHover: false,
@@ -91,13 +67,13 @@ useEffect(() => {
            : null } 
            <PageContainer>
            <ClientContainer/>
-           <Nyheter/>
-           <Tjanster />
-           <Roller />
-           <Erfarenhet/>
-           <Konsult />  
-           <OmOss />
-           <Contact/>
+           <Nyheter nyheter={nyheter} />
+           <Tjanster tjanster={tjanster} />
+           <Roller roller={roller} />
+           <Erfarenhet erfarenhet={erfarenhet} />
+           <Konsult konsult={konsult} />  
+           <OmOss omOss={omOss} />
+           <Contact contact={contact} />
            </PageContainer>
            
               

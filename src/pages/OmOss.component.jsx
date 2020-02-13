@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import sanityClient from '../Client'
 import styled from 'styled-components'
 import imageUrlBuilder from '@sanity/image-url'
@@ -41,18 +41,8 @@ const Desc = styled(PortableText)`
     max-width: 800px
     `
 
-const OmOss = () => {
+const OmOss = ({omOss}) => {
     
-    const [omOss, setOmOss] = useState('')
-    useEffect(() => {
-        const omOssQuery = `*[_type == "omOss"]`
- 
-        sanityClient.fetch(omOssQuery).then(omOss => { 
-         omOss.forEach(omOss => {
-             setOmOss(omOss)
-         })
-       })
-    }, [])
 
     return (
         <OmOssCont id="om-oss">

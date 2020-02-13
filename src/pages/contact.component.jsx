@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 
 const ContactCont = styled.div`
@@ -52,18 +51,9 @@ const ContactLink = styled.a`
     text-decoration: none;
     color: black;
 `
-const Contact = () => {
+const Contact = ({contact}) => {
 
-    const [contact, setContact] = useState('')
-    useEffect(() => {
-        const contactQuery = `*[_type == "kontakt"]`
- 
-        sanityClient.fetch(contactQuery).then(contact => { 
-         contact.forEach(contact => {
-             setContact(contact)
-         })
-       })
-    }, [])
+    
     return (
         <div style={{height:'auto'}} id="kontakt">
         <ContactTitle>{contact.titel}</ContactTitle>
