@@ -67,7 +67,7 @@ const RollHeader = ({ headerImg, headerTitle, headerDesc }) => {
           <Overlay />
           <Title>{headerTitle}</Title>
           <TextCont>
-          <Desc blocks={ headerDesc }/>
+          <Desc blocks={headerDesc}/>
           </TextCont>
         
         </HeaderCont>

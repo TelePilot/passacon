@@ -49,7 +49,7 @@ const NavLink = styled(Link)`
 `
 
 const Menu = ({ open, header, setOpen }) => {
-  console.log(header.meny)
+  
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>

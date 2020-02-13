@@ -50,7 +50,7 @@ const KonsultSlider = ({konsulter, showing, click, slide}) => {
         })} style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
         </SliderBackground>
   
-        <SliderCont onClick={() => console.log(this)}  style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
+        <SliderCont   style={{pointerEvents: showing.pointerEvents, opacity: showing.opacity}}>
                 <Slider {...settings} >
                     {konsulter.map((konsult, id) => <SliderItem key={id} konsult={konsult} />)}
                 </Slider>

@@ -71,7 +71,7 @@ const KonsultExtendedPhone = () => {
       })
    }, [id])
    const namn = article.namn ? article.namn.split(" ") : null
-   console.log(namn)
+
     return (
         <ArticleCont>
             <Thumbnail style={{backgroundImage: `url(${urlFor(article.bild).url()})`}}/>

@@ -11,7 +11,6 @@ function urlFor(source) {
 }
 const OmOssCont = styled.div`
     width: 100%;
-    min-height: 100vh;
     height: auto;
     margin-top: 125px;
     text-align: left;
@@ -21,7 +20,8 @@ const OmOssCont = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    height: auto
+    height: auto;
+    min-height: 50vh;
 `
 
 const OmOssTitle = styled.h1`

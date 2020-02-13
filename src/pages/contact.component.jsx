@@ -4,8 +4,8 @@ import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 
 const ContactCont = styled.div`
-    min-height: 50vh;
-    height: auto;
+    height: 50vh;
+    
     width: 100%;
     text-align: left;
     display: flex;

@@ -1,20 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import HeaderImage from '../components/header-image/header-image.component'
-import sanityClient from '../Client'
 import styled from 'styled-components'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import ClientContainer from '../components/client-logo-container/client-logo-container.component'
-import ArticleContainer from '../components/article-container/article-container.component'
 import Tjanster from './tjanster.component'
 import Konsult from './konsulter.component'
 import OmOss from './OmOss.component'
 import Roller from './roller.component'
 import Erfarenhet from './erfarenhet.component'
 import Contact from './contact.component'
+import Nyheter from './nyheter.component'
+import sanityClient from '../Client'
 
 const HomeCarousel = styled(Carousel)`
-  overflow: hidden;
   height: 100vh;
   width: 100%;
   ul {
@@ -33,40 +32,43 @@ const HomeCarousel = styled(Carousel)`
   position: relative;
   width: 100%;
   height: auto;
-  overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
   }`
 
 const PageContainer = styled.div`
-height: auto;
+  height: auto;
   width: 100%;
-  padding: 0 8%;
   box-sizing: border-box;
+  padding: 0 8%;
+  
 `
 
 const Home = () => {
+  const [home, setHome] = useState({
+    thumbnail: '',
+    titel: ''
+}) 
+const unmounted = useRef(false)
 
-    const [home, setHome] = useState({
-        thumbnail: '',
-        titel: ''
+useEffect(() => {
+ 
+    const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
+        thumbnail, titel
+    }`
+
+    sanityClient.fetch(homeQuery).then(home => {
+        const homeArray = []
+      home.forEach(home=> {
+          homeArray.push(home)
+      })
+      setHome(homeArray)
     })
-    
-    useEffect(() => {
-   
-        const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
-            thumbnail, titel
-        }`
-
-        sanityClient.fetch(homeQuery).then(home => {
-            const homeArray = []
-          home.forEach(home=> {
-              homeArray.push(home)
-          })
-          setHome(homeArray)
-        })
-       
-      }, [])
+  
+   return () => {
+     unmounted.current = true
+   }
+  }, [])
       const settings = {
         autoPlay: true,
         stopOnHover: false,
@@ -87,14 +89,14 @@ const Home = () => {
                 </HomeCarousel>
            : null } 
            <PageContainer>
-            <ClientContainer/>
-            <ArticleContainer content="nyhet" />
-            <Tjanster />
-            <Roller />
-            <Erfarenhet/>
-            <Konsult />  
-            <OmOss />
-            <Contact/>
+           <ClientContainer/>
+           <Nyheter/>
+           <Tjanster />
+           <Roller />
+           <Erfarenhet/>
+           <Konsult />  
+           <OmOss />
+           <Contact/>
            </PageContainer>
            
               

@@ -25,7 +25,7 @@ const Konsulter = () => {
       }, [])
   
     return (
-        <div style={{height:'auto', minHeight: '100vh'}} id="konsulter">
+        <div style={{height:'auto'}} id="konsulter">
             <Title title="Konsulter" />
             <KonsultContainer setSlide={setSlide} click={setShowing} showing={showing} konsulter={konsult} />
             <KonsultSlider setSlide={setSlide} slide={slide} click={setShowing} showing={showing} konsulter={konsult} />

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import sanityClient from '../../Client'
 import ArticleThumbnail from '../article-thumbnail/article-thumbnail.component'
 
 const StyledContainer = styled.div`
     width: 100%;
     display: grid;
+    height: auto;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 100px;
     grid-gap: 2%;
@@ -18,26 +18,9 @@ const StyledContainer = styled.div`
     }
 `
 
-const ArticleContainer = ({content}) => {
+const ArticleContainer = ({articles}) => {
 
-    const [articles, setArticles] = useState([])
 
-    useEffect(() => {
-        const articleQuery = `*[_type == "artikel" && ${content}] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
-
-        sanityClient.fetch(articleQuery).then(article => {
-            
-          article.forEach(article => {
-              articleArray.push(article)
-          })
-          setArticles(articleArray)
-        })
-        return
-      }, [content])
     return (
         <StyledContainer>
             {articles ? articles.map((article, id) => <ArticleThumbnail key={id} article={article} /> ) : null}
