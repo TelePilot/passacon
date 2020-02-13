@@ -6,7 +6,7 @@ import { theme } from './theme.styles'
 import Header from './components/header/header.component'
 import Footer from './components/footer/footer-component'
 import Home from './pages/home.component'
-const HomePage = lazy(() => import('./pages/home.component'))
+
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
 const KonsultPage = lazy(() => import('./components/konsult-extended-phone/konsult-extended-phone.component'))
@@ -21,14 +21,17 @@ const Kontakter = lazy(() => import('./pages/kontakter.component'))
 
 function App() {
   
+  
   return (
     
        <div className="App">
          <ThemeProvider theme={theme}>
           <Header/>
           
-          <Switch>
+          
             <Suspense fallback={<p>Loading</p>}>
+             
+              <Switch>
             <Route 
             path={'/'}
            
@@ -77,8 +80,9 @@ function App() {
             path={'/kontakt-tredje-land'}
             component={Kontakter}
              />
+                 </Switch>
             </Suspense>
-          </Switch>
+      
  
           <Footer/>
           
