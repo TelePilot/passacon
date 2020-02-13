@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App'
-import ScrollMemory from 'react-router-scroll-memory'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(<BrowserRouter
 >
-    <div>
-        <ScrollMemory />
+  
     <App />
-    </div>
+
     
     </BrowserRouter>, document.getElementById('root'))
 
