@@ -8,6 +8,7 @@ const TjanstCont = styled.div`
     text-align: left;
     margin-bottom: 100px;
     position:relative;
+    min-height: 100vh;
     height: auto;
     
 `

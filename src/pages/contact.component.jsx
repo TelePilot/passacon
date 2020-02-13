@@ -4,7 +4,8 @@ import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 
 const ContactCont = styled.div`
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     width: 100%;
     text-align: left;
     display: flex;
@@ -64,7 +65,7 @@ const Contact = () => {
        })
     }, [])
     return (
-        <div>
+        <div style={{height:'auto'}} id="kontakt">
         <ContactTitle>{contact.titel}</ContactTitle>
         <ContactCont>
                 

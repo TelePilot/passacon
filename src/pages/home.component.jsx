@@ -33,7 +33,6 @@ const HomeCarousel = styled(Carousel)`
   position: relative;
   width: 100%;
   height: auto;
-  height: 9000px;
   overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
@@ -95,7 +94,7 @@ const Home = () => {
             <Erfarenhet/>
             <Konsult />  
             <OmOss />
-            <Contact />
+            <Contact/>
            </PageContainer>
            
               

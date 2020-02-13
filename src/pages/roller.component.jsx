@@ -8,6 +8,7 @@ import Title from '../components/title/title.component'
 const Cont = styled.div`
     margin: 120px 0;
     text-align: left;
+    min-height: 100vh;
     height: auto;
 
 `
