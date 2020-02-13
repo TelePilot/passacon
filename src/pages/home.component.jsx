@@ -32,7 +32,7 @@ const HomeCarousel = styled(Carousel)`
   position: relative;
   width: 100%;
   height: auto;
-  height: 10000px;
+  padding-bottom: 100px;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
   }`
