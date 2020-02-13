@@ -12,6 +12,7 @@ function urlFor(source) {
 const OmOssCont = styled.div`
     width: 100%;
     min-height: 100vh;
+    height: auto;
     margin-top: 125px;
     text-align: left;
     box-sizing: border-box;

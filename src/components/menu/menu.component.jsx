@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { bool } from 'prop-types'
-import { Link as Scroll } from 'react-scroll'
+import { HashLink  as Link } from 'react-router-hash-link'
 
 const StyledMenu = styled.nav`
 display: flex;
@@ -26,7 +26,7 @@ transition: transform 0.3s ease-in-out;
 
 }
 `
-const NavLink = styled(Scroll)`
+const NavLink = styled(Link)`
 
   font-size: 1rem;
   text-transform: uppercase;
@@ -53,7 +53,7 @@ const Menu = ({ open, header, setOpen }) => {
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>
-            {header ? header.meny.map(item => <NavLink activeClass="active" to={`${item.link}`} spy={true} smooth={true} offset={-70} duration={500} onClick={() => setOpen(!open)} key={item._key}>{item.name}</NavLink>): null}
+            {header ? header.meny.map(item => <NavLink to={`/#${item.link}`} smooth duration={500} onClick={() => setOpen(!open)} key={item._key}>{item.name}</NavLink>): null}
         </StyledMenu>
     )
 }

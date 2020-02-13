@@ -33,23 +33,28 @@ const HomeCarousel = styled(Carousel)`
   position: relative;
   width: 100%;
   height: auto;
+  height: 9000px;
   overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
   }`
 
 const PageContainer = styled.div`
+height: auto;
   width: 100%;
   padding: 0 8%;
   box-sizing: border-box;
 `
 
 const Home = () => {
+
     const [home, setHome] = useState({
         thumbnail: '',
         titel: ''
     })
+    
     useEffect(() => {
+   
         const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
             thumbnail, titel
         }`
@@ -61,7 +66,7 @@ const Home = () => {
           })
           setHome(homeArray)
         })
-        return
+       
       }, [])
       const settings = {
         autoPlay: true,
@@ -72,7 +77,6 @@ const Home = () => {
         showStatus: false,
         transitionTime: 1000,
       }
-
     return (
         <HomeContainer id="home">
             {

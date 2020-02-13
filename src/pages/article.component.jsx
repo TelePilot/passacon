@@ -5,10 +5,10 @@ import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 import ArticleThumbnail from '../components/article-header-thumbnail/article-header-thumbnail.component'
 import Mer from '../components/mer/mer.component'
-
 const ArticleCont = styled.div`
-    height: auto;
+    
     min-height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -45,6 +45,7 @@ const Article = () => {
 
     return (
         <ArticleCont>
+        
             <ArticleThumbnail imageDeets={article}/>
             <TextCont>
                 <Text blocks={article.beskrivning} />

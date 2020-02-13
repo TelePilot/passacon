@@ -21,10 +21,10 @@ const Partners = lazy(() => import('./pages/partners.component'))
 const Kontakter = lazy(() => import('./pages/kontakter.component'))
 
 function App() {
+  
   return (
     
        <div className="App">
-        
          <ThemeProvider theme={theme}>
            <Header/>
           <Switch>
