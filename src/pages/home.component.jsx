@@ -32,7 +32,7 @@ const HomeCarousel = styled(Carousel)`
   const HomeContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 9200px;
+  height: auto;
   overflow: hidden;
   .carousel.carousel-slider .control-arrow:hover {
     background: none;
