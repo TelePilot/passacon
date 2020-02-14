@@ -20,6 +20,10 @@ const Cont = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @media only screen and (max-width: 800px){
+    
+        width: 90%;
+    }
 `
 const Overlay = styled.div`
     position: absolute;
@@ -35,6 +39,10 @@ const Title = styled.h1`
     position: relative;
     z-index: 2;
     line-height: 1em;
+    @media only screen and (max-width: 800px){
+        font-size:32px;
+        width: 80%;
+    }
 `
 
 

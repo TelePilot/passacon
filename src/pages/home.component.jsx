@@ -26,7 +26,10 @@ const HomeCarousel = styled(Carousel)`
   }
   .carousel-slider .control-arrow {
     padding: 20px !important;
-  }`
+  }
+  @media only screen and (max-width: 800px){
+    height: 70vh
+}`
   const HomeContainer = styled.div`
   position: relative;
   width: 100%;
