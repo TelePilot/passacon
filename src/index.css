@@ -1,11 +1,11 @@
 @font-face {
   font-family: Corbel;
-  src: url(Corbel.ttf);
+  src: url(/Corbel.ttf);
 }
 
 @font-face {
   font-family: 'Droid Serif';
-  src: url(DroidSerif.ttf)
+  src: url(/DroidSerif.ttf)
 }
 html, body { 
   height: auto ;
