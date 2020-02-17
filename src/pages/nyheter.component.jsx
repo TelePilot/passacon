@@ -8,6 +8,9 @@ const NyhetContainer = styled.div`
     margin-bottom: 100px;
     position:relative;
     height: auto;
+    @media screen and (max-width: 700px){
+        margin-top: 0;
+    }
     
 `
 

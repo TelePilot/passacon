@@ -42,6 +42,7 @@ const NavLink = styled(Link)`
   @media screen and (max-width: ${({theme }) => theme.mobile}) {
     font-size: 1rem;
     text-align: center;
+    margin: 5px 0;
   }
 
   &:hover {

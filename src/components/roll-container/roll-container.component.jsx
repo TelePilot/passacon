@@ -12,6 +12,9 @@ const Cont = styled.div`
     padding: 2.5% 0;
     @media only screen and (max-width: 840px){
         grid-template-columns:1fr;
+        max-width: 100%;
+        padding: 2.5% 0;
+
       }
     
 `

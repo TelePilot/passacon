@@ -43,6 +43,12 @@ const Deets = styled.a`
     z-index: 1;
     text-decoration: none;
     color: black;
+    @media screen and (max-width: 500px){
+        font-size: 12px;
+    }
+    @media screen and (max-width: 350px){
+        font-size: 10px;
+    }
 `
 const KonsultItem = ({konsult, clicked, setSlide, slide}) => {
     return (

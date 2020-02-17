@@ -21,18 +21,21 @@ const OmOssCont = styled.div`
 const Image = styled.img`
     width: 100%;
     height: auto;
-    min-height: 50vh;
 `
 
 const OmOssTitle = styled.h1`
     font-size: 64px;
     width: 400px;
+    max-width: 80%;
     line-height: 0.9em;
     @media screen and (max-width: 800px){
         font-size: 36px;
     }
     @media screen and (max-width: 500px){
         font-size: 28px;
+    }
+    @media screen and (max-width: 400px){
+        font-size: 22px;
     }
 
 `

@@ -23,17 +23,33 @@ const HeaderCont = styled.div`
     box-sizing: border-box;
     padding: 2%;
     color: white;
+    @media screen and (max-width: 400px){
+        margin-bottom: 70px;
+    }
+    @media screen and (max-width: 300px){
+        margin-bottom: 250px;
+    }
+   
 `
 
 const Thumbnail = styled.div`
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     left: 0;
     top: 0;
+    display: flex;
+    padding: 2%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    text-align: left;
     z-index: -2;
+    
 `
 
 
@@ -49,7 +65,8 @@ const Desc = styled(PortableText)`
 
 const Overlay = styled.div`
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    height: 100%;
     background: rgba(0,0,0,0.3);
     position: absolute;
     top: 0;
@@ -57,19 +74,20 @@ const Overlay = styled.div`
     z-index: -1;
 `
 const TextCont = styled.div`
-    padding: 0 10% 0 0;
+    padding: 0 20% 0 0;
+
 `
 
 const RollHeader = ({ headerImg, headerTitle, headerDesc }) => {
     return (
         <HeaderCont>
-          <Thumbnail style={{backgroundImage:`url(${urlFor(headerImg).url()})`}}/> 
+          <Thumbnail style={{backgroundImage:`url(${urlFor(headerImg).url()})`}}> 
           <Overlay />
           <Title>{headerTitle}</Title>
           <TextCont>
           <Desc blocks={headerDesc}/>
           </TextCont>
-        
+            </Thumbnail>
         </HeaderCont>
     )
 }

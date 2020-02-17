@@ -21,11 +21,13 @@ const Cont = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: column wrap;
-    
+  
 `
 const Title = styled.h3`
     font-size: 26px;
-    margin: 0;`
+    margin: 0;
+    @media screen and (max-width: 500px){
+        font-size:18px;;}`
 
 const Desc = styled(PortableText)`
 
@@ -47,6 +49,9 @@ const TitleCont = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @media screen and (max-width: 500px){
+        flex-flow: wrap}
+
 `
 
 const RollItem = ({roll}) => {

@@ -56,7 +56,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     @media only screen and (max-width: 420px){
        margin: 5px 0;
-       
+       font-size: 16px;
     }
 `
 const Arrow = styled.img`

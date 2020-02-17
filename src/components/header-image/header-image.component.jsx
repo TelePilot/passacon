@@ -18,7 +18,7 @@ const StyledHeaderImage = styled.div`
     height: 100vh;
     position: relative;   
     @media only screen and (max-width: 800px){
-        height: 70vh
+        height: 70vh;
     }
 `
 
@@ -49,7 +49,12 @@ const Title = styled.h1`
         width: 80%;
     }
     @media screen and (max-width: 500px){
-        font-size: 32px;
+        font-size: 22px;
+        width: 80%;
+        padding-left: 3.5rem; 
+    }
+    @media screen and (max-width: 350px){
+        font-size: 18px;
         width: 80%;
         padding-left: 3.5rem; 
     }
