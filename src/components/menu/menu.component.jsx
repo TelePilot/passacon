@@ -20,6 +20,7 @@ left: 0;
 transition: transform 0.3s ease-in-out;
 
 @media screen and (max-width: ${({theme }) => theme.mobile}) {
+  min-width: 90%;
   width: 100%;
   padding: 0;
 }
@@ -39,7 +40,7 @@ const NavLink = styled(Link)`
   cursor:pointer;
   
   @media screen and (max-width: ${({theme }) => theme.mobile}) {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -49,11 +50,20 @@ const NavLink = styled(Link)`
 `
 
 const Menu = ({ open, header, setOpen }) => {
+
+  const scrollWithOffset = (el, offset) => {
+    const elementPosition = el.offsetTop - offset
+    window.scroll({
+      top: elementPosition,
+      left: 0,
+      behavior: "smooth"
+    })}
+  
   
     return (
         <StyledMenu open={open}>
             <div style={{height: "3rem"}}></div>
-            {header ? header.meny.map(item => <NavLink to={`/#${item.link}`} smooth duration={500} onClick={() => setOpen(!open)} key={item._key}>{item.name}</NavLink>): null}
+            {header ? header.meny.map(item => <NavLink scroll={el => scrollWithOffset(el, 85)} to={`/#${item.link}`} smooth onClick={() => setOpen(!open)} key={item._key}>{item.name}</NavLink>): null}
         </StyledMenu>
     )
 }

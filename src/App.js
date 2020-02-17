@@ -5,9 +5,11 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './theme.styles'
 import Header from './components/header/header.component'
 import Footer from './components/footer/footer-component'
-import Home from './pages/home.component'
-import sanityClient from './Client'
 
+import sanityClient from './Client'
+import styled from 'styled-components'
+
+const HomePage = lazy(() => import('./pages/home.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
 const ErfarenhetPage = lazy(() => import('./components/erfarenhet-extended/erfarenhet-extended.component'))
 const KonsultPage = lazy(() => import('./components/konsult-extended-phone/konsult-extended-phone.component'))
@@ -143,6 +145,13 @@ useEffect(() => {
           })
           return
         }, [])
+        const Fallback = styled.div`
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        `
   return (
     
        <div className="App">
@@ -150,7 +159,7 @@ useEffect(() => {
           <Header/>
           
           
-            <Suspense fallback={<p>Loading</p>}>
+            <Suspense fallback={<Fallback><p>Loading...</p></Fallback>}>
              
               <Switch>
             <Route 
@@ -158,7 +167,7 @@ useEffect(() => {
            
             exact
             >
-              <Home erfarenhet={erfarenhet} home={home} tjanster={tjanster} nyheter={nyheter} omOss={omOss} contact={contact} konsult={konsult} roller={roller} />
+              <HomePage erfarenhet={erfarenhet} home={home} tjanster={tjanster} nyheter={nyheter} omOss={omOss} contact={contact} konsult={konsult} roller={roller} />
             </Route>
             <Route
             path={'/artikel/:artikelId'} 
