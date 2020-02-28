@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import ScrollAnimation from 'react-animate-on-scroll'
+import "animate.css/animate.min.css"
 
 const StyledContainer = styled.div`
     width: 100%;
@@ -67,16 +69,20 @@ const Arrow = styled.img`
     margin-bottom: -2.8px;
     margin-left: 5px;
 `
-const ErfarenhetContainer = ({erfarenhet}) => {
+const ErfarenhetContainer = ({erfarenhet, id}) => {
 
     
     return (
-        <StyledContainer>
-            {erfarenhet ? erfarenhet.map((article, id) =><StyledLink  key={id} to={`/erfarenhet/${article.titel}`} > <Item >
+        
+            <StyledContainer>
+            {erfarenhet ? erfarenhet.map((article, id) => <ScrollAnimation animateOnce animateIn="fadeInUp" duration={1 + id / 10}><StyledLink  key={id} to={`/erfarenhet/${article.titel}`} > <Item >
             <p>{article.titel} <span> <Arrow alt="arrow" src="left-arrow.svg" /></span></p>
             </Item>
-           </StyledLink>  ) : null}
+           </StyledLink> 
+         </ScrollAnimation> ) : null}
         </StyledContainer>
+      
+        
     )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ArticleThumbnail from '../article-thumbnail/article-thumbnail.component'
+import "animate.css/animate.min.css"
 
 const StyledContainer = styled.div`
     width: 100%;
@@ -23,7 +24,7 @@ const ArticleContainer = ({articles}) => {
 
     return (
         <StyledContainer>
-            {articles ? articles.map((article, id) => <ArticleThumbnail key={id} article={article} /> ) : null}
+            {articles ? articles.map((article, id) =><ArticleThumbnail key={id} article={article} />) : null}
         </StyledContainer>
     )
 }

@@ -8,7 +8,7 @@ const Cont = styled.div`
     margin: 120px 0;
     text-align: left;
     height: auto;
-
+    
 `
 
 

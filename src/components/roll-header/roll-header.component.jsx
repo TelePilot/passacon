@@ -19,16 +19,8 @@ const HeaderCont = styled.div`
     min-height: 50vh;
     height: auto;
     width: 100%;
-    
-    box-sizing: border-box;
-    padding: 2%;
     color: white;
-    @media screen and (max-width: 400px){
-        margin-bottom: 70px;
-    }
-    @media screen and (max-width: 300px){
-        margin-bottom: 250px;
-    }
+   
    
 `
 
@@ -38,13 +30,12 @@ const Thumbnail = styled.div`
     height: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    position: absolute;
     left: 0;
     top: 0;
     display: flex;
-    padding: 2%;
+    padding: 3%;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-flow: column;
     text-align: left;
@@ -74,7 +65,10 @@ const Overlay = styled.div`
     z-index: -1;
 `
 const TextCont = styled.div`
-    padding: 0 20% 0 0;
+    padding: 0 40% 0 0;
+    @media only screen and (max-width: 600px){
+        padding-right: 20%;
+    }
 
 `
 

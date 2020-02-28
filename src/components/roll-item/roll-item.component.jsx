@@ -5,7 +5,6 @@ import sanityClient from '../../Client'
 import imageUrlBuilder from '@sanity/image-url'
 import VetaMer from '../veta-mer/veta-mer.component'
 
-
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
   return builder.image(source)

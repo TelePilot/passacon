@@ -159,7 +159,7 @@ useEffect(() => {
           <Header/>
           
           
-            <Suspense fallback={<Fallback><p>Loading...</p></Fallback>}>
+            <Suspense fallback={<Fallback><p></p></Fallback>}>
              
               <Switch>
             <Route 
