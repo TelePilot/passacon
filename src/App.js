@@ -172,11 +172,15 @@ useEffect(() => {
        <div className="App">
          <CookieConsent 
          enableDeclineButton
+         disableStyles={true}
+         flipButtons
+         declineButtonClasses="decline-button"
+         buttonClasses="cookie-button"
          buttonText={'Acceptera'}
          declineButtonText={'Nej Tack'}
+         containerClasses="cookie-container"
          onAccept={() => cookieTrigger(true)}
-         style={{background: '#1E3D78'}}
-         buttonStyle={{padding: '5px'}}
+         
          > 
           Den här webbplatsen använder cookies, som samlar information om hur du interagerar med sidan. Genom att acceptera tillåter du att vi samlar och behandlar dina personuppgifter enligt vår <Link style={{color: 'white'}} to="./integritets-policy">
           integritetspolicy
