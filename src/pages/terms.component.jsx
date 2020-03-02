@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 const LinkCont = styled.div`
     display: flex;
@@ -19,6 +20,9 @@ const Text = styled.div`
 `
 
 const Terms = () => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search) 
+      },[])
     return (
         <Cont>
         <h1 >Integritetspolicy</h1>

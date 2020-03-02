@@ -5,6 +5,7 @@ import sanityClient from '../Client'
 import PortableText from '@sanity/block-content-to-react'
 import ArticleThumbnail from '../components/article-header-thumbnail/article-header-thumbnail.component'
 import Mer from '../components/mer/mer.component'
+import ReactGA from 'react-ga'
 const ArticleCont = styled.div`
     
     min-height: 100vh;
@@ -31,6 +32,9 @@ const TextCont = styled.div`
 const Text = styled(PortableText)``
 
 const Article = () => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search) 
+      },[])
     const [article, setArticle] = useState('')
     let id = useParams()
    useEffect(() => {

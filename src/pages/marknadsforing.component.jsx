@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
-
+import ReactGA from 'react-ga'
 
 const Cont = styled.div`
     width: 70%;
@@ -11,6 +11,9 @@ const Cont = styled.div`
 const Text = styled.div`
 `
 const Marknadsforing = () => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search) 
+      },[])
     return (
         <Cont>
             <h1>Marknadsföring</h1>

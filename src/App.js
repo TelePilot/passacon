@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect} from 'react'
-import { Route, Switch} from 'react-router-dom'
+import { Route, Switch, Link} from 'react-router-dom'
 import './App.css'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme.styles'
@@ -8,6 +8,8 @@ import Footer from './components/footer/footer-component'
 
 import sanityClient from './Client'
 import styled from 'styled-components'
+import CookieConsent from 'react-cookie-consent'
+import ReactGA from 'react-ga'
 
 const HomePage = lazy(() => import('./pages/home.component'))
 const ArticlePage = lazy(() => import('./pages/article.component'))
@@ -27,6 +29,19 @@ function App() {
     thumbnail: '',
     titel: ''
 }) 
+  const [cookie, cookieTrigger] = useState(false)
+useEffect(() => {
+  if(cookie) {
+    ReactGA.initialize('UA-159437523-1')
+    window.localStorage.setItem('cookieAccepted', true)
+    ReactGA.pageview(window.location.pathname + window.location.search) 
+    
+  }
+ 
+}, [cookie])
+useEffect(() => {
+  window.localStorage.cookieAccepted ? cookieTrigger(true) : cookieTrigger(false)
+},[])
 
 useEffect(() => {
  
@@ -155,6 +170,20 @@ useEffect(() => {
   return (
     
        <div className="App">
+         <CookieConsent 
+         enableDeclineButton
+         buttonText={'Acceptera'}
+         declineButtonText={'Nej Tack'}
+         onAccept={() => cookieTrigger(true)}
+         style={{background: '#1E3D78'}}
+         buttonStyle={{padding: '5px'}}
+         > 
+          Den här webbplatsen använder cookies, som samlar information om hur du interagerar med sidan. Genom att acceptera tillåter du att vi samlar och behandlar dina personuppgifter enligt vår <Link style={{color: 'white'}} to="./integritets-policy">
+          integritetspolicy
+      </Link>
+         
+         
+         </CookieConsent>
          <ThemeProvider theme={theme}>
           <Header/>
           

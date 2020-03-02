@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import HeaderImage from '../components/header-image/header-image.component'
 import styled from 'styled-components'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -11,6 +11,7 @@ import Roller from './roller.component'
 import Erfarenhet from './erfarenhet.component'
 import Contact from './contact.component'
 import Nyheter from './nyheter.component'
+import ReactGA from 'react-ga'
 
 const HomeCarousel = styled(Carousel)`
   height: 100vh;
@@ -48,7 +49,9 @@ const PageContainer = styled.div`
 `
 
 const Home = ({konsult, home, roller, tjanster, nyheter, contact, omOss, erfarenhet}) => {
- 
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search) 
+  },[])
       const settings = {
         autoPlay: true,
         stopOnHover: false,

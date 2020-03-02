@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import ErfarenhetContainer from '../components/erfarenhet-container/erfarenhet-container'
 import Title from '../components/title/title.component'
+import ReactGA from 'react-ga'
 
 const ErfarenhetCont = styled.div`
     margin-top: 100px;
@@ -13,6 +14,9 @@ const ErfarenhetCont = styled.div`
 `
 
 const Erfarenhet = ({erfarenhet}) => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search) 
+      },[])
     return (
         <ErfarenhetCont id="erfarenhet">
             <Title title={'Erfarenhet'} />
