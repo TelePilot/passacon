@@ -44,8 +44,9 @@ const MapCont = styled.div`
         width: 100%;
     }
 `
-const ContactTele = styled.h3`
+const ContactTele = styled.h4`
 font-size: 22px;
+font-weight: 400;
 @media screen and (max-width: 800px){
     font-size: 16px;
 }
