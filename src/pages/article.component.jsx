@@ -6,6 +6,7 @@ import PortableText from '@sanity/block-content-to-react'
 import ArticleThumbnail from '../components/article-header-thumbnail/article-header-thumbnail.component'
 import Mer from '../components/mer/mer.component'
 import ReactGA from 'react-ga'
+import { LinkedinShareButton, LinkedinIcon } from 'react-share'
 const ArticleCont = styled.div`
     
     min-height: 100vh;
@@ -45,8 +46,8 @@ const Article = () => {
             setArticle(article)
         })
       })
-   }, [id])
-
+   }, [id.artikelId])
+   console.log(article.titel)
     return (
         <ArticleCont>
         
@@ -54,6 +55,9 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
+            <LinkedinShareButton title={article.titel} url={window.location.href}>
+                <LinkedinIcon round />
+            </LinkedinShareButton>
             <Mer />
         </ArticleCont>
     )
