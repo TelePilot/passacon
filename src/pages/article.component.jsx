@@ -55,7 +55,7 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
-            <LinkedinShareButton title={article.titel} url={`https://passacon.se${window.location.pathname}`}>
+            <LinkedinShareButton title={article.titel} source="https://passacon.se" url={`https://passacon.se${window.location.pathname}`}>
                 <LinkedinIcon round />
             </LinkedinShareButton>
             <Mer />
