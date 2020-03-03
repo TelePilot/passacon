@@ -55,7 +55,7 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
-            <LinkedinShareButton title={article.titel} source="https://passacon.se" url={window.location.href}>
+            <LinkedinShareButton title={article.titel} source="https://passacon.herokuapp.com/" url={window.location.href}>
                 <LinkedinIcon round />
             </LinkedinShareButton>
             <Mer />
