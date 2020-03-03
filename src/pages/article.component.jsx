@@ -47,7 +47,7 @@ const Article = () => {
         })
       })
    }, [id.artikelId])
-   console.log(article.titel)
+
     return (
         <ArticleCont>
         
@@ -55,7 +55,7 @@ const Article = () => {
             <TextCont>
                 <Text blocks={article.beskrivning} />
             </TextCont>
-            <LinkedinShareButton title={article.titel} url={window.location.href}>
+            <LinkedinShareButton title={article.titel} url={`https://passacon.se${window.location.href}`}>
                 <LinkedinIcon round />
             </LinkedinShareButton>
             <Mer />
