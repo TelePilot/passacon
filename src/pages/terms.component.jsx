@@ -53,6 +53,7 @@ const Terms = () => {
     <Link to="/partners">Våra partners personuppgifter</Link>
     <Link to="/mejl-dokumenthanteringspolicy">Vår mejl och dokumenthanteringspolicy</Link>
     <Link to="/kontakt-tredje-land">Kontakter med tredje land</Link>
+    <Link to="/analytics">Inbördes arrangemang kopplade till hemsida och sociala medier</Link>
 </LinkCont>
 
 

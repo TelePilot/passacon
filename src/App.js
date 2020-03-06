@@ -23,6 +23,7 @@ const Leverans = lazy(() => import('./pages/leverans.component'))
 const Mails = lazy(() => import('./pages/mails.component'))
 const Partners = lazy(() => import('./pages/partners.component'))
 const Kontakter = lazy(() => import('./pages/kontakter.component'))
+const SocialsPage = lazy(() => import('./pages/sociala.component'))
 
 function App() {
   const [home, setHome] = useState({
@@ -43,11 +44,36 @@ useEffect(() => {
   window.localStorage.cookieAccepted ? cookieTrigger(true) : cookieTrigger(false)
 },[])
 
-useEffect(() => {
- 
-    const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
+
+  const [contact, setContact] = useState('')
+  const [tjanster, setTjanster] = useState('')
+  const [roller, setRoller] = useState('')
+  const [konsult, setKonsult] = useState([])
+  const [omOss, setOmOss] = useState('')
+  const [nyheter, setNyheter] = useState('')
+  const [erfarenhet, setErfarenhet] = useState('')
+
+  useEffect(() => {
+      const homeQuery = `*[_type == "artikel" && slider] | order(datum desc) {
         thumbnail, titel
     }`
+    const contactQuery = `*[_type == "kontakt"]`
+    const tjansterQuery = `*[_type == "artikel" && tjanster] | order(datum desc)
+        {
+            thumbnail, titel
+        }`
+    const rollQuery = `*[_type == "roller"]`
+    const omOssQuery = `*[_type == "omOss"]`
+    const articleQuery = `*[_type == "artikel" && nyhet] | order(datum desc)
+    {
+        thumbnail, titel
+    }`
+    const erfarenhetQuery = `*[_type == "erfarenhet"] | order(datum desc)
+    {
+        thumbnail, titel
+    }`
+    const konsultQuery = `*[_type == "konsult"] | order(namn asc)`
+
 
     sanityClient.fetch(homeQuery).then(home => {
         const homeArray = []
@@ -57,109 +83,71 @@ useEffect(() => {
       setHome(homeArray)
     })
   
-   return
-  }, [])
-  const [contact, setContact] = useState('')
-    useEffect(() => {
-        const contactQuery = `*[_type == "kontakt"]`
+    
  
         sanityClient.fetch(contactQuery).then(contact => { 
          contact.forEach(contact => {
              setContact(contact)
          })
        })
-    }, [])
-    const [tjanster, setTjanster] = useState([])
-    useEffect(() => {
-        const articleQuery = `*[_type == "artikel" && tjanster] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
+      
+        const tjansterArray = []
 
-        sanityClient.fetch(articleQuery).then(article => {
+        sanityClient.fetch(tjansterQuery).then(article => {
             
           article.forEach(article => {
         
-              articleArray.push(article)
+              tjansterArray.push(article)
           })
-          setTjanster(articleArray)
+          setTjanster(tjansterArray)
         })
-        return }, [])
-        const [roller, setRoller] = useState({
-          roller: []
-        })
-        useEffect(() => {
-            const rollQuery = `*[_type == "roller"]`
+    
     
             sanityClient.fetch(rollQuery).then(roller => {
               roller.forEach(roll => {
                 setRoller(roll)
               })
             })
-            return
-          }, [])
-
-    const [omOss, setOmOss] = useState('')
-    useEffect(() => {
-        const omOssQuery = `*[_type == "omOss"]`
+     
  
         sanityClient.fetch(omOssQuery).then(omOss => { 
          omOss.forEach(omOss => {
              setOmOss(omOss)
          })
        })
-    }, [])
-    const [nyheter, setNyheter] = useState([])
- 
-    useEffect(() => {
-       
-        const articleQuery = `*[_type == "artikel" && nyhet] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
+     
+      const articleArray = []
 
-        sanityClient.fetch(articleQuery).then(article => {
-            
-          article.forEach(article => {
-              articleArray.push(article)
-          })
-          setNyheter(articleArray)
+      sanityClient.fetch(articleQuery).then(article => {
+          
+        article.forEach(article => {
+            articleArray.push(article)
         })
-        return 
-      }, [])
-      const [erfarenhet, setErfarenhet] = useState([])
+        setNyheter(articleArray)
+      })
+       
+        const erfarenhetArray = []
 
-    useEffect(() => {
-        const articleQuery = `*[_type == "erfarenhet"] | order(datum desc)
-        {
-            thumbnail, titel
-        }`
-        const articleArray = []
-
-        sanityClient.fetch(articleQuery).then(article => {
+        sanityClient.fetch(erfarenhetQuery).then(article => {
             
           article.forEach(article => {
-              articleArray.push(article)
+              erfarenhetArray.push(article)
           })
-          setErfarenhet(articleArray)
+          setErfarenhet(erfarenhetArray)
+        })
+      
+        const konsultArray = []
+        sanityClient.fetch(konsultQuery).then(konsult => {
+            
+          konsult.forEach(konsult => {
+              konsultArray.push(konsult)
+          })
+          setKonsult(konsultArray)
         })
         return
       }, [])
-      const [konsult, setKonsult] = useState([])
-      useEffect(() => {
-          const konsultQuery = `*[_type == "konsult"] | order(namn asc)`
-          const konsultArray = []
-          sanityClient.fetch(konsultQuery).then(konsult => {
-              
-            konsult.forEach(konsult => {
-                konsultArray.push(konsult)
-            })
-            setKonsult(konsultArray)
-          })
-          return
-        }, [])
+     
+    
         const Fallback = styled.div`
         display: flex;
         height: 100vh;
@@ -243,6 +231,9 @@ useEffect(() => {
             path={'/kontakt-tredje-land'}
             component={Kontakter}
              />
+             <Route 
+             path={'/analytics'}
+             component={SocialsPage} />
                  </Switch>
             </Suspense>
       

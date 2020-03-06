@@ -55,7 +55,7 @@ const KonsultSlide = ({konsulter, showing, click, slide, setSlide}) => {
             opacity: 0
         })}><i className="fas fa-times-circle fa-2x"></i></CloseButton>
             <Slider>
-            {konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>)}
+            {konsulter ? konsulter.map((konsult, index) => <Slide key={index} index={index}><SliderItem konsult={konsult} /></Slide>) : null}
             </Slider>
             <ButtonBack style={{position: 'absolute', top:'32vh', left:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="back" src="./back.svg"/></ButtonBack>
             <ButtonNext style={{position: 'absolute', top:'32vh', right:'-60px', borderRadius: '50%', width:'50px', height: '50px'}} ><img style={{width: '30px'}} alt="next" src="./next.svg"/></ButtonNext>

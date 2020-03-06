@@ -33,12 +33,11 @@ const TextCont = styled.div`
 const Text = styled(PortableText)``
 
 const Article = () => {
-    useEffect(() => {
-        ReactGA.pageview(window.location.pathname + window.location.search) 
-      },[])
+ 
     const [article, setArticle] = useState('')
     let id = useParams()
    useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search) 
        const articleQuery = `*[_type == "artikel" && titel == "${id.artikelId.trim()}"]`
 
        sanityClient.fetch(articleQuery).then(article => { 
@@ -47,6 +46,7 @@ const Article = () => {
         })
       })
    }, [id.artikelId])
+   console.log('hey')
 
     return (
         <ArticleCont>
@@ -54,10 +54,11 @@ const Article = () => {
             <ArticleThumbnail imageDeets={article}/>
             <TextCont>
                 <Text blocks={article.beskrivning} />
+                <LinkedinShareButton title={article.titel} url={`https://passacon.se${window.location.pathname}`}>
+                    <LinkedinIcon round size={32} />
+                </LinkedinShareButton>
             </TextCont>
-            <LinkedinShareButton title={article.titel} source="https://passacon.herokuapp.com/" url={window.location.href}>
-                <LinkedinIcon round />
-            </LinkedinShareButton>
+            
             <Mer />
         </ArticleCont>
     )

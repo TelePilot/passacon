@@ -23,7 +23,7 @@ const Cont = styled.div`
 const RollContainer = ({roller}) => {
     return (
         <Cont>
-            {roller.map((roll, id) => <RollItem className="icon" key={id} roll={roll} />)}
+            {roller ? roller.map((roll, id) => <RollItem className="icon" key={id} roll={roll} />): null}
         </Cont>
     )
 }
